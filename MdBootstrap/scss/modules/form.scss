@@ -19,6 +19,7 @@ form{
                 @include transition;
                 background: none;
                 appearance: none;
+                -webkit-appearance:none;
                 padding: $spacer*1.5;
                 border: 1px solid $gray-600;
                 border-radius: $radius;
@@ -88,6 +89,7 @@ form{
                 padding: $spacer*1.5;
                 input[type='checkbox']{
                     appearance: none;
+                    -webkit-appearance:none;
                     border-radius: $radius*0.5;
                     padding: $spacer;
                     border: 1px solid $gray-800;
@@ -123,6 +125,7 @@ form{
                 padding: $spacer*1.5;
                 input[type='radio']{
                     appearance: none;
+                    -webkit-appearance:none;
                     border-radius: 50%;
                     padding: $spacer;
                     border: 1px solid $gray-800;
