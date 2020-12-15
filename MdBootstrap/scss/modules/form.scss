@@ -18,8 +18,9 @@ form{
             &.form-item{
                 @include transition;
                 background: none;
-                appearance: none;
-                -webkit-appearance:none;
+                -moz-appearance: none; 
+	            -webkit-appearance: none; 
+	            appearance: none;
                 padding: $spacer*1.5;
                 border: 1px solid $gray-600;
                 border-radius: $radius;
@@ -88,8 +89,9 @@ form{
                 align-items: center;
                 padding: $spacer*1.5;
                 input[type='checkbox']{
-                    appearance: none;
-                    -webkit-appearance:none;
+                    -moz-appearance: none; 
+	                -webkit-appearance: none; 
+	                appearance: none;
                     border-radius: $radius*0.5;
                     padding: $spacer;
                     border: 1px solid $gray-800;
@@ -124,8 +126,9 @@ form{
                 align-items: center;
                 padding: $spacer*1.5;
                 input[type='radio']{
-                    appearance: none;
-                    -webkit-appearance:none;
+                    -moz-appearance: none; 
+	                -webkit-appearance: none; 
+	                appearance: none;
                     border-radius: 50%;
                     padding: $spacer;
                     border: 1px solid $gray-800;

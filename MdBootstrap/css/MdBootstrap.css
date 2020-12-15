@@ -963,8 +963,9 @@ form.form div.form-group label.form-item-label {
 form.form input.form-item, form.form select.form-select, form.form textarea.form-textarea {
   transition: all 0.2s ease;
   background: none;
-  appearance: none;
+  -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   padding: 0.75rem;
   border: 1px solid #6c757d;
   border-radius: 0.5em;
@@ -1111,8 +1112,9 @@ form.form span.form-check {
   padding: 0.75rem;
 }
 form.form span.form-check input[type=checkbox], form.form span.form-check textarea[type=checkbox].form-textarea, form.form span.form-check select[type=checkbox].form-select {
-  appearance: none;
+  -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   border-radius: 0.25em;
   padding: 0.5rem;
   border: 1px solid #343a40;
@@ -1147,8 +1149,9 @@ form.form span.form-radio {
   padding: 0.75rem;
 }
 form.form span.form-radio input[type=radio], form.form span.form-radio textarea[type=radio].form-textarea, form.form span.form-radio select[type=radio].form-select {
-  appearance: none;
+  -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   border-radius: 50%;
   padding: 0.5rem;
   border: 1px solid #343a40;
