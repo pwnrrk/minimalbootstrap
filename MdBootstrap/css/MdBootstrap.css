@@ -963,6 +963,7 @@ form.form div.form-group label.form-item-label {
 form.form input.form-item, form.form select.form-select, form.form textarea.form-textarea {
   transition: all 0.2s ease;
   background: none;
+  appearance: none;
   padding: 0.75rem;
   border: 1px solid #6c757d;
   border-radius: 0.5em;
