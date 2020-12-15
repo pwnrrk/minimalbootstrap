@@ -67,7 +67,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $teal !default;
+$primary:       darken($color:$teal,$amount:$darken-amount) !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
