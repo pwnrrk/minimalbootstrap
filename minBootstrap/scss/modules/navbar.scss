@@ -1,5 +1,4 @@
 .navbar{
-    @include transition;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -66,7 +65,7 @@
     &-collapse{
         flex: 1 0 0%;
         width: auto;
-        transition: max-height .3s ease-in-out;
+        transition: max-height .5s ease;
         display: flex;
         ul{
             padding: 0;
