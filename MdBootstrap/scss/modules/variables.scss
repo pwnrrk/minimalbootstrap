@@ -107,6 +107,9 @@ $color-scheme: map-merge(
   transition: all .2s ease;
 }
 
+$tablet:770px;
+$mobile:450px;
+
 :root{
     @include color;
 }

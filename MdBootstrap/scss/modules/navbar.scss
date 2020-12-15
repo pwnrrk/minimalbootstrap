@@ -1,8 +1,115 @@
 .navbar{
+    @include transition;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     width: 100%;
+    padding: $spacer*1.5 0 $spacer*1.5 0;
+    &-dark{
+        .navbar-brand{
+            color: $light;
+        }
+        .navbar-link{
+            color: darken($color: $light, $amount: $darken-amount);
+            &:hover{
+                color: $light;
+            }
+            &.active{
+                color: $light;
+            }
+        }
+        .navbar-toggler{
+            color: $light;
+            box-shadow: 0 0 0 2px darken($color: $light, $amount: $darken-amount);
+        }
+    }
+    &-light{
+        .navbar-brand{
+            color: $dark;
+        }
+        .navbar-link{
+            color: lighten($color: $dark, $amount: $lighten-amount);
+            &:hover{
+                color: $dark;
+            }
+            &.active{
+                color: $dark;
+            }
+        }
+        .navbar-toggler{
+            color: $dark;
+            box-shadow: 0 0 0 2px darken($color: $dark, $amount: $darken-amount);
+        }
+    }
     &-brand{
-        font-size: 1.5em;
+        font-size: $font-size*1.5;
         text-decoration: none;
+        padding: $spacer;
+        cursor: pointer;
+        &:hover{
+            text-decoration: none;
+        }
+        @media (max-width:$mobile){
+            flex: 1;
+        }
+    }
+    &-link{
+        border-radius: $radius;
+        text-decoration: none;
+        font-size: $font-size*1.2;
+        padding: $spacer;
+        cursor: pointer;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    &-collapse{
+        flex: 1 0 0%;
+        width: auto;
+        transition: max-height .3s ease-in-out;
+        display: flex;
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            li{
+                padding: $spacer 0 $spacer 0;
+            }
+        }
+        @media (max-width:$mobile){
+            flex: none;
+            width: 100%;
+            max-height: 0;
+            pointer-events: none;
+            overflow: hidden;
+            ul{
+                display: list-item;
+            }
+        }
+        &.opened{
+            max-height: 100vh;
+            pointer-events: all;
+            overflow: auto;
+        }
+    }
+    &-toggler{
+        border-radius: $radius;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: $font-size*2;
+        height: $font-size*2;
+        background: none;
+        border: 1px solid transparent;
+        padding: $spacer;
+        margin-right: $spacer;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+        @media (max-width:$mobile) {
+            display: flex;
+        }
     }
 }

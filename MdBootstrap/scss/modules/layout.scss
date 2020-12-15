@@ -13,6 +13,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     padding: $spacer;
+    &-fulid{
+        width: 100%;
+    }
 }
 @each $name,$align in $flex-align {
     .align-items-#{$name}{
