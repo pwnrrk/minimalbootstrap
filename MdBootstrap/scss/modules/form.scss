@@ -1,0 +1,84 @@
+form{
+    &.form{
+        padding-left: $spacer;
+        padding-right: $spacer;
+        div{
+            &.form-group{
+                padding: $spacer;
+            }
+        }
+        input{
+            &.form-item{
+                background: none;
+                transition: all .3s ease;
+                padding: $spacer*1.5;
+                border: 1px solid $gray-600;
+                border-radius: $radius;
+                width: 100%;
+                &:focus{
+                    outline: none;
+                    box-shadow: 0 0 0 3px lighten($color: $primary, $amount: $lighten-amount);
+                    border: 1px solid $primary;
+                }
+                &::placeholder{
+                    color: $gray-600;
+                    size: $font-size;
+                }
+                &-invalid{
+                    border: 1px solid $danger;
+                    color: $danger;
+                    &:focus{
+                        outline: none;
+                        box-shadow: 0 0 0 3px lighten($color: $danger, $amount: $lighten-amount);
+                        border: 1px solid $danger;
+                    }
+                }
+                &-valid{
+                    border: 1px solid $success;
+                    &:focus{
+                        outline: none;
+                        box-shadow: 0 0 0 3px lighten($color: $success, $amount: $lighten-amount);
+                        border: 1px solid $success;
+                    }
+                }
+                @each $name,$color in $color-scheme {
+                    &-#{$name}{
+                        &:focus{
+                            outline: none;
+                            box-shadow: 0 0 0 3px lighten($color: $color, $amount: $lighten-amount);
+                            border: 1px solid $color;
+                        }
+                    }
+                }
+                @each $name,$color in $colors {
+                    &-#{$name}{
+                        &:focus{
+                            outline: none;
+                            box-shadow: 0 0 0 3px lighten($color: $color, $amount: $lighten-amount);
+                            border: 1px solid $color;
+                        }
+                    }
+                }
+            }
+        }
+        select{
+            &.form-select{
+                @extend input, .form-item;
+                font-size: $font-size;
+                padding: $spacer*1.2;
+                height: fit-content;
+            }
+        }
+        span{
+            &.form-check{
+                padding: $spacer*1.5;
+                &.disabled{
+                    color: $gray-500;
+                    pointer-events: none;
+                }
+            }
+        }
+        
+    }
+}
+

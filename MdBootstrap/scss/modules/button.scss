@@ -12,20 +12,20 @@
     background-color: $gray-700;
     height: fit-content;
     &:hover{
-        background-color: darken($color: $gray-700, $amount: 10);
+        background-color: darken($color: $gray-700, $amount: $darken-amount);
     }
     &:focus{
         outline: none;
-        box-shadow: 0 0 2px 3px lighten($color: $gray-700, $amount: 25);
+        box-shadow: 0 0 0 3px lighten($color: $gray-700, $amount: $lighten-amount);
     }
     &.disabled{
         pointer-events: none;
-        background-color: lighten($color: $gray-700, $amount: 25);
+        background-color: lighten($color: $gray-700, $amount: $lighten-amount);
     }
 
     &:disabled{
         pointer-events: none;
-        background-color: lighten($color: $gray-700, $amount: 25);
+        background-color: lighten($color: $gray-700, $amount: $lighten-amount);
     }
     &-sm{
         padding: $spacer ($spacer*3) $spacer ($spacer*3);
@@ -41,11 +41,11 @@
     .btn-#{$name}{
         background-color: $color;
         &:hover{
-            background-color: darken($color: $color, $amount: 10);
+            background-color: darken($color: $color, $amount: $darken-amount);
         }
         &:focus{
             outline: none;
-            box-shadow: 0 0 2px 3px lighten($color: $color, $amount: 25);
+            box-shadow: 0 0 0 3px lighten($color: $color, $amount: $lighten-amount);
         }
         @if $name != 'light'{
             color: $light;
@@ -64,18 +64,18 @@
             }
             &:focus{
                 outline: none;
-                box-shadow: 0 0 2px 3px lighten($color: $color, $amount: 25);
+                box-shadow: 0 0 0 3px lighten($color: $color, $amount: $lighten-amount);
             }
         }
 
         &.disabled{
             pointer-events: none;
-            background-color: lighten($color: $color, $amount: 25);
+            background-color: lighten($color: $color, $amount: $lighten-amount);
         }
 
         &:disabled{
             pointer-events: none;
-            background-color: lighten($color: $color, $amount: 25);
+            background-color: lighten($color: $color, $amount: $lighten-amount);
         }
     }
 }

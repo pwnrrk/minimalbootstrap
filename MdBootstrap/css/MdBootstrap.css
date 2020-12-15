@@ -129,6 +129,9 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   justify-self: center;
 }
+.text-mute {
+  color: #adb5bd;
+}
 
 .text-blue {
   color: #007bff;
@@ -656,7 +659,7 @@ body {
 }
 .btn:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #869099;
+  box-shadow: 0 0 0 3px #869099;
 }
 .btn.disabled {
   pointer-events: none;
@@ -684,7 +687,7 @@ body {
 }
 .btn-primary:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #7eeaca;
+  box-shadow: 0 0 0 3px #7eeaca;
 }
 .btn-primary-outline {
   background-color: #fff;
@@ -698,7 +701,7 @@ body {
 }
 .btn-primary-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #7eeaca;
+  box-shadow: 0 0 0 3px #7eeaca;
 }
 .btn-primary.disabled {
   pointer-events: none;
@@ -718,7 +721,7 @@ body {
 }
 .btn-secondary:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #afb5ba;
+  box-shadow: 0 0 0 3px #afb5ba;
 }
 .btn-secondary-outline {
   background-color: #fff;
@@ -732,7 +735,7 @@ body {
 }
 .btn-secondary-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #afb5ba;
+  box-shadow: 0 0 0 3px #afb5ba;
 }
 .btn-secondary.disabled {
   pointer-events: none;
@@ -752,7 +755,7 @@ body {
 }
 .btn-success:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #71dd8a;
+  box-shadow: 0 0 0 3px #71dd8a;
 }
 .btn-success-outline {
   background-color: #fff;
@@ -766,7 +769,7 @@ body {
 }
 .btn-success-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #71dd8a;
+  box-shadow: 0 0 0 3px #71dd8a;
 }
 .btn-success.disabled {
   pointer-events: none;
@@ -786,7 +789,7 @@ body {
 }
 .btn-info:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #63d9ec;
+  box-shadow: 0 0 0 3px #63d9ec;
 }
 .btn-info-outline {
   background-color: #fff;
@@ -800,7 +803,7 @@ body {
 }
 .btn-info-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #63d9ec;
+  box-shadow: 0 0 0 3px #63d9ec;
 }
 .btn-info.disabled {
   pointer-events: none;
@@ -820,7 +823,7 @@ body {
 }
 .btn-warning:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #ffe187;
+  box-shadow: 0 0 0 3px #ffe187;
 }
 .btn-warning-outline {
   background-color: #fff;
@@ -834,7 +837,7 @@ body {
 }
 .btn-warning-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #ffe187;
+  box-shadow: 0 0 0 3px #ffe187;
 }
 .btn-warning.disabled {
   pointer-events: none;
@@ -854,7 +857,7 @@ body {
 }
 .btn-danger:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #efa2a9;
+  box-shadow: 0 0 0 3px #efa2a9;
 }
 .btn-danger-outline {
   background-color: #fff;
@@ -868,7 +871,7 @@ body {
 }
 .btn-danger-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #efa2a9;
+  box-shadow: 0 0 0 3px #efa2a9;
 }
 .btn-danger.disabled {
   pointer-events: none;
@@ -887,7 +890,7 @@ body {
 }
 .btn-light:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px white;
+  box-shadow: 0 0 0 3px white;
 }
 .btn-light-outline {
   background-color: #fff;
@@ -900,7 +903,7 @@ body {
 }
 .btn-light-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px white;
+  box-shadow: 0 0 0 3px white;
 }
 .btn-light.disabled {
   pointer-events: none;
@@ -920,7 +923,7 @@ body {
 }
 .btn-dark:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #6d7a86;
+  box-shadow: 0 0 0 3px #6d7a86;
 }
 .btn-dark-outline {
   background-color: #fff;
@@ -934,7 +937,7 @@ body {
 }
 .btn-dark-outline:focus {
   outline: none;
-  box-shadow: 0 0 2px 3px #6d7a86;
+  box-shadow: 0 0 0 3px #6d7a86;
 }
 .btn-dark.disabled {
   pointer-events: none;
@@ -943,6 +946,165 @@ body {
 .btn-dark:disabled {
   pointer-events: none;
   background-color: #6d7a86;
+}
+
+form.form {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+form.form div.form-group {
+  padding: 0.5rem;
+}
+form.form input.form-item, form.form select.form-select {
+  background: none;
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+  border: 1px solid #6c757d;
+  border-radius: 0.5em;
+  width: 100%;
+}
+form.form input.form-item:focus, form.form select.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #7eeaca;
+  border: 1px solid #20c997;
+}
+form.form input.form-item::placeholder, form.form select.form-select::placeholder {
+  color: #6c757d;
+  size: 1em;
+}
+form.form input.form-item-invalid, form.form select.form-item-invalid.form-select {
+  border: 1px solid #dc3545;
+  color: #dc3545;
+}
+form.form input.form-item-invalid:focus, form.form select.form-item-invalid.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #efa2a9;
+  border: 1px solid #dc3545;
+}
+form.form input.form-item-valid, form.form select.form-item-valid.form-select {
+  border: 1px solid #28a745;
+}
+form.form input.form-item-valid:focus, form.form select.form-item-valid.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #71dd8a;
+  border: 1px solid #28a745;
+}
+form.form input.form-item-primary:focus, form.form select.form-item-primary.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #7eeaca;
+  border: 1px solid #20c997;
+}
+form.form input.form-item-secondary:focus, form.form select.form-item-secondary.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #afb5ba;
+  border: 1px solid #6c757d;
+}
+form.form input.form-item-success:focus, form.form select.form-item-success.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #71dd8a;
+  border: 1px solid #28a745;
+}
+form.form input.form-item-info:focus, form.form select.form-item-info.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #63d9ec;
+  border: 1px solid #17a2b8;
+}
+form.form input.form-item-warning:focus, form.form select.form-item-warning.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #ffe187;
+  border: 1px solid #ffc107;
+}
+form.form input.form-item-danger:focus, form.form select.form-item-danger.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #efa2a9;
+  border: 1px solid #dc3545;
+}
+form.form input.form-item-light:focus, form.form select.form-item-light.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px white;
+  border: 1px solid #f8f9fa;
+}
+form.form input.form-item-dark:focus, form.form select.form-item-dark.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #6d7a86;
+  border: 1px solid #343a40;
+}
+form.form input.form-item-blue:focus, form.form select.form-item-blue.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #80bdff;
+  border: 1px solid #007bff;
+}
+form.form input.form-item-indigo:focus, form.form select.form-item-indigo.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #b389f9;
+  border: 1px solid #6610f2;
+}
+form.form input.form-item-purple:focus, form.form select.form-item-purple.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #b8a2e0;
+  border: 1px solid #6f42c1;
+}
+form.form input.form-item-pink:focus, form.form select.form-item-pink.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #f6b0d0;
+  border: 1px solid #e83e8c;
+}
+form.form input.form-item-red:focus, form.form select.form-item-red.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #efa2a9;
+  border: 1px solid #dc3545;
+}
+form.form input.form-item-orange:focus, form.form select.form-item-orange.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fec392;
+  border: 1px solid #fd7e14;
+}
+form.form input.form-item-yellow:focus, form.form select.form-item-yellow.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #ffe187;
+  border: 1px solid #ffc107;
+}
+form.form input.form-item-green:focus, form.form select.form-item-green.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #71dd8a;
+  border: 1px solid #28a745;
+}
+form.form input.form-item-teal:focus, form.form select.form-item-teal.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #7eeaca;
+  border: 1px solid #20c997;
+}
+form.form input.form-item-cyan:focus, form.form select.form-item-cyan.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #63d9ec;
+  border: 1px solid #17a2b8;
+}
+form.form input.form-item-white:focus, form.form select.form-item-white.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px white;
+  border: 1px solid #fff;
+}
+form.form input.form-item-gray:focus, form.form select.form-item-gray.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #afb5ba;
+  border: 1px solid #6c757d;
+}
+form.form input.form-item-gray-dark:focus, form.form select.form-item-gray-dark.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #6d7a86;
+  border: 1px solid #343a40;
+}
+form.form select.form-select {
+  font-size: 1em;
+  padding: 0.6rem;
+  height: fit-content;
+}
+form.form span.form-check {
+  padding: 0.75rem;
+}
+form.form span.form-check.disabled {
+  color: #adb5bd;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=MdBootstrap.css.map */
