@@ -117,22 +117,17 @@
         }
     }
     &-toggler{
-        border-radius: $radius;
-        display: none;
+        display: none !important;
         justify-content: center;
         align-items: center;
-        width: $font-size*2;
-        height: $font-size*2;
-        background: none;
         border: 1px solid transparent;
-        padding: $spacer;
         margin-right: $spacer;
         cursor: pointer;
         &:focus{
             outline: none;
         }
         @media (max-width:$mobile) {
-            display: flex;
+            display: flex !important;
         }
     }
 }
