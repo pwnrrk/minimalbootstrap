@@ -513,6 +513,10 @@ body {
   margin-left: 3rem;
 }
 
+.nm {
+  margin: 0 !important;
+}
+
 .p-1 {
   padding: 1rem;
 }
@@ -611,6 +615,10 @@ body {
 
 .pl-5 {
   padding-left: 3rem;
+}
+
+.np {
+  padding: 0 !important;
 }
 
 .rounded {
@@ -1115,12 +1123,7 @@ body {
   background-color: #6d7a86;
 }
 
-form.form {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-form.form div.form-group {
+div.form-group {
   padding: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1129,11 +1132,11 @@ form.form div.form-group {
       flex-wrap: wrap;
 }
 
-form.form div.form-group label.form-item-label {
+div.form-group label.form-item-label {
   padding: 0.5rem 0 0.5rem 0;
 }
 
-form.form input.form-item, form.form textarea.form-textarea, form.form select.form-select {
+input.form-item, textarea.form-textarea, select.form-select {
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   background: none;
@@ -1147,207 +1150,207 @@ form.form input.form-item, form.form textarea.form-textarea, form.form select.fo
   width: 100%;
 }
 
-form.form input.form-item:focus, form.form textarea.form-textarea:focus, form.form select.form-select:focus {
+input.form-item:focus, textarea.form-textarea:focus, select.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #52e3b8;
           box-shadow: 0 0 0 3px #52e3b8;
   border: 1px solid #199d76;
 }
 
-form.form input.form-item::-webkit-input-placeholder, form.form textarea.form-textarea::-webkit-input-placeholder, form.form select.form-select::-webkit-input-placeholder {
+input.form-item::-webkit-input-placeholder, textarea.form-textarea::-webkit-input-placeholder, select.form-select::-webkit-input-placeholder {
   color: #6c757d;
 }
 
-form.form input.form-item:-ms-input-placeholder, form.form textarea.form-textarea:-ms-input-placeholder, form.form select.form-select:-ms-input-placeholder {
+input.form-item:-ms-input-placeholder, textarea.form-textarea:-ms-input-placeholder, select.form-select:-ms-input-placeholder {
   color: #6c757d;
 }
 
-form.form input.form-item::-ms-input-placeholder, form.form textarea.form-textarea::-ms-input-placeholder, form.form select.form-select::-ms-input-placeholder {
+input.form-item::-ms-input-placeholder, textarea.form-textarea::-ms-input-placeholder, select.form-select::-ms-input-placeholder {
   color: #6c757d;
 }
 
-form.form input.form-item::placeholder, form.form textarea.form-textarea::placeholder, form.form select.form-select::placeholder {
+input.form-item::placeholder, textarea.form-textarea::placeholder, select.form-select::placeholder {
   color: #6c757d;
 }
 
-form.form input.form-item-invalid, form.form textarea.form-item-invalid.form-textarea, form.form select.form-item-invalid.form-select {
+input.form-item-invalid, textarea.form-item-invalid.form-textarea, select.form-item-invalid.form-select {
   border: 1px solid #dc3545;
   color: #dc3545;
 }
 
-form.form input.form-item-invalid:focus, form.form textarea.form-item-invalid.form-textarea:focus, form.form select.form-item-invalid.form-select:focus {
+input.form-item-invalid:focus, textarea.form-item-invalid.form-textarea:focus, select.form-item-invalid.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #efa2a9;
           box-shadow: 0 0 0 3px #efa2a9;
   border: 1px solid #dc3545;
 }
 
-form.form input.form-item-valid, form.form textarea.form-item-valid.form-textarea, form.form select.form-item-valid.form-select {
+input.form-item-valid, textarea.form-item-valid.form-textarea, select.form-item-valid.form-select {
   border: 1px solid #28a745;
 }
 
-form.form input.form-item-valid:focus, form.form textarea.form-item-valid.form-textarea:focus, form.form select.form-item-valid.form-select:focus {
+input.form-item-valid:focus, textarea.form-item-valid.form-textarea:focus, select.form-item-valid.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #71dd8a;
           box-shadow: 0 0 0 3px #71dd8a;
   border: 1px solid #28a745;
 }
 
-form.form input.form-item-primary:focus, form.form textarea.form-item-primary.form-textarea:focus, form.form select.form-item-primary.form-select:focus {
+input.form-item-primary:focus, textarea.form-item-primary.form-textarea:focus, select.form-item-primary.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #52e3b8;
           box-shadow: 0 0 0 3px #52e3b8;
   border: 1px solid #199d76;
 }
 
-form.form input.form-item-secondary:focus, form.form textarea.form-item-secondary.form-textarea:focus, form.form select.form-item-secondary.form-select:focus {
+input.form-item-secondary:focus, textarea.form-item-secondary.form-textarea:focus, select.form-item-secondary.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #afb5ba;
           box-shadow: 0 0 0 3px #afb5ba;
   border: 1px solid #6c757d;
 }
 
-form.form input.form-item-success:focus, form.form textarea.form-item-success.form-textarea:focus, form.form select.form-item-success.form-select:focus {
+input.form-item-success:focus, textarea.form-item-success.form-textarea:focus, select.form-item-success.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #71dd8a;
           box-shadow: 0 0 0 3px #71dd8a;
   border: 1px solid #28a745;
 }
 
-form.form input.form-item-info:focus, form.form textarea.form-item-info.form-textarea:focus, form.form select.form-item-info.form-select:focus {
+input.form-item-info:focus, textarea.form-item-info.form-textarea:focus, select.form-item-info.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #63d9ec;
           box-shadow: 0 0 0 3px #63d9ec;
   border: 1px solid #17a2b8;
 }
 
-form.form input.form-item-warning:focus, form.form textarea.form-item-warning.form-textarea:focus, form.form select.form-item-warning.form-select:focus {
+input.form-item-warning:focus, textarea.form-item-warning.form-textarea:focus, select.form-item-warning.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #ffe187;
           box-shadow: 0 0 0 3px #ffe187;
   border: 1px solid #ffc107;
 }
 
-form.form input.form-item-danger:focus, form.form textarea.form-item-danger.form-textarea:focus, form.form select.form-item-danger.form-select:focus {
+input.form-item-danger:focus, textarea.form-item-danger.form-textarea:focus, select.form-item-danger.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #efa2a9;
           box-shadow: 0 0 0 3px #efa2a9;
   border: 1px solid #dc3545;
 }
 
-form.form input.form-item-light:focus, form.form textarea.form-item-light.form-textarea:focus, form.form select.form-item-light.form-select:focus {
+input.form-item-light:focus, textarea.form-item-light.form-textarea:focus, select.form-item-light.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px white;
           box-shadow: 0 0 0 3px white;
   border: 1px solid #f8f9fa;
 }
 
-form.form input.form-item-dark:focus, form.form textarea.form-item-dark.form-textarea:focus, form.form select.form-item-dark.form-select:focus {
+input.form-item-dark:focus, textarea.form-item-dark.form-textarea:focus, select.form-item-dark.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #6d7a86;
           box-shadow: 0 0 0 3px #6d7a86;
   border: 1px solid #343a40;
 }
 
-form.form input.form-item-blue:focus, form.form textarea.form-item-blue.form-textarea:focus, form.form select.form-item-blue.form-select:focus {
+input.form-item-blue:focus, textarea.form-item-blue.form-textarea:focus, select.form-item-blue.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #80bdff;
           box-shadow: 0 0 0 3px #80bdff;
   border: 1px solid #007bff;
 }
 
-form.form input.form-item-indigo:focus, form.form textarea.form-item-indigo.form-textarea:focus, form.form select.form-item-indigo.form-select:focus {
+input.form-item-indigo:focus, textarea.form-item-indigo.form-textarea:focus, select.form-item-indigo.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #b389f9;
           box-shadow: 0 0 0 3px #b389f9;
   border: 1px solid #6610f2;
 }
 
-form.form input.form-item-purple:focus, form.form textarea.form-item-purple.form-textarea:focus, form.form select.form-item-purple.form-select:focus {
+input.form-item-purple:focus, textarea.form-item-purple.form-textarea:focus, select.form-item-purple.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #b8a2e0;
           box-shadow: 0 0 0 3px #b8a2e0;
   border: 1px solid #6f42c1;
 }
 
-form.form input.form-item-pink:focus, form.form textarea.form-item-pink.form-textarea:focus, form.form select.form-item-pink.form-select:focus {
+input.form-item-pink:focus, textarea.form-item-pink.form-textarea:focus, select.form-item-pink.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #f6b0d0;
           box-shadow: 0 0 0 3px #f6b0d0;
   border: 1px solid #e83e8c;
 }
 
-form.form input.form-item-red:focus, form.form textarea.form-item-red.form-textarea:focus, form.form select.form-item-red.form-select:focus {
+input.form-item-red:focus, textarea.form-item-red.form-textarea:focus, select.form-item-red.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #efa2a9;
           box-shadow: 0 0 0 3px #efa2a9;
   border: 1px solid #dc3545;
 }
 
-form.form input.form-item-orange:focus, form.form textarea.form-item-orange.form-textarea:focus, form.form select.form-item-orange.form-select:focus {
+input.form-item-orange:focus, textarea.form-item-orange.form-textarea:focus, select.form-item-orange.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #fec392;
           box-shadow: 0 0 0 3px #fec392;
   border: 1px solid #fd7e14;
 }
 
-form.form input.form-item-yellow:focus, form.form textarea.form-item-yellow.form-textarea:focus, form.form select.form-item-yellow.form-select:focus {
+input.form-item-yellow:focus, textarea.form-item-yellow.form-textarea:focus, select.form-item-yellow.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #ffe187;
           box-shadow: 0 0 0 3px #ffe187;
   border: 1px solid #ffc107;
 }
 
-form.form input.form-item-green:focus, form.form textarea.form-item-green.form-textarea:focus, form.form select.form-item-green.form-select:focus {
+input.form-item-green:focus, textarea.form-item-green.form-textarea:focus, select.form-item-green.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #71dd8a;
           box-shadow: 0 0 0 3px #71dd8a;
   border: 1px solid #28a745;
 }
 
-form.form input.form-item-teal:focus, form.form textarea.form-item-teal.form-textarea:focus, form.form select.form-item-teal.form-select:focus {
+input.form-item-teal:focus, textarea.form-item-teal.form-textarea:focus, select.form-item-teal.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #7eeaca;
           box-shadow: 0 0 0 3px #7eeaca;
   border: 1px solid #20c997;
 }
 
-form.form input.form-item-cyan:focus, form.form textarea.form-item-cyan.form-textarea:focus, form.form select.form-item-cyan.form-select:focus {
+input.form-item-cyan:focus, textarea.form-item-cyan.form-textarea:focus, select.form-item-cyan.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #63d9ec;
           box-shadow: 0 0 0 3px #63d9ec;
   border: 1px solid #17a2b8;
 }
 
-form.form input.form-item-white:focus, form.form textarea.form-item-white.form-textarea:focus, form.form select.form-item-white.form-select:focus {
+input.form-item-white:focus, textarea.form-item-white.form-textarea:focus, select.form-item-white.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px white;
           box-shadow: 0 0 0 3px white;
   border: 1px solid #fff;
 }
 
-form.form input.form-item-gray:focus, form.form textarea.form-item-gray.form-textarea:focus, form.form select.form-item-gray.form-select:focus {
+input.form-item-gray:focus, textarea.form-item-gray.form-textarea:focus, select.form-item-gray.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #afb5ba;
           box-shadow: 0 0 0 3px #afb5ba;
   border: 1px solid #6c757d;
 }
 
-form.form input.form-item-gray-dark:focus, form.form textarea.form-item-gray-dark.form-textarea:focus, form.form select.form-item-gray-dark.form-select:focus {
+input.form-item-gray-dark:focus, textarea.form-item-gray-dark.form-textarea:focus, select.form-item-gray-dark.form-select:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #6d7a86;
           box-shadow: 0 0 0 3px #6d7a86;
   border: 1px solid #343a40;
 }
 
-form.form select.form-select {
+select.form-select {
   padding: 0.6rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
-form.form span.form-check {
+span.form-check {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1357,7 +1360,7 @@ form.form span.form-check {
   padding: 0.75rem;
 }
 
-form.form span.form-check input[type='checkbox'], form.form span.form-check textarea.form-textarea[type='checkbox'], form.form span.form-check select.form-select[type='checkbox'] {
+span.form-check input[type='checkbox'], span.form-check textarea.form-textarea[type='checkbox'], span.form-check select.form-select[type='checkbox'] {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -1369,36 +1372,36 @@ form.form span.form-check input[type='checkbox'], form.form span.form-check text
   transition: all .2s ease;
 }
 
-form.form span.form-check input[type='checkbox']:checked, form.form span.form-check textarea.form-textarea[type='checkbox']:checked, form.form span.form-check select.form-select[type='checkbox']:checked {
+span.form-check input[type='checkbox']:checked, span.form-check textarea.form-textarea[type='checkbox']:checked, span.form-check select.form-select[type='checkbox']:checked {
   background-color: #199d76;
   border: 1px solid #199d76;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 
-form.form span.form-check input[type='checkbox']:focus, form.form span.form-check textarea.form-textarea[type='checkbox']:focus, form.form span.form-check select.form-select[type='checkbox']:focus {
+span.form-check input[type='checkbox']:focus, span.form-check textarea.form-textarea[type='checkbox']:focus, span.form-check select.form-select[type='checkbox']:focus {
   outline: none;
   border: 1px solid #199d76;
   -webkit-box-shadow: 0 0 0 3px #52e3b8;
           box-shadow: 0 0 0 3px #52e3b8;
 }
 
-form.form span.form-check.disabled {
+span.form-check.disabled {
   color: #adb5bd;
   pointer-events: none;
 }
 
-form.form span.form-check.disabled input[type='checkbox'], form.form span.form-check.disabled textarea.form-textarea[type='checkbox'], form.form span.form-check.disabled select.form-select[type='checkbox'] {
+span.form-check.disabled input[type='checkbox'], span.form-check.disabled textarea.form-textarea[type='checkbox'], span.form-check.disabled select.form-select[type='checkbox'] {
   border: 1px solid #adb5bd;
 }
 
-form.form span.form-check.disabled input[type='checkbox']:focus, form.form span.form-check.disabled textarea.form-textarea[type='checkbox']:focus, form.form span.form-check.disabled select.form-select[type='checkbox']:focus {
+span.form-check.disabled input[type='checkbox']:focus, span.form-check.disabled textarea.form-textarea[type='checkbox']:focus, span.form-check.disabled select.form-select[type='checkbox']:focus {
   outline: none;
   border: 1px solid #adb5bd;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-form.form span.form-radio {
+span.form-radio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1408,7 +1411,7 @@ form.form span.form-radio {
   padding: 0.75rem;
 }
 
-form.form span.form-radio input[type='radio'], form.form span.form-radio textarea.form-textarea[type='radio'], form.form span.form-radio select.form-select[type='radio'] {
+span.form-radio input[type='radio'], span.form-radio textarea.form-textarea[type='radio'], span.form-radio select.form-select[type='radio'] {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -1420,29 +1423,29 @@ form.form span.form-radio input[type='radio'], form.form span.form-radio textare
   transition: all .2s ease;
 }
 
-form.form span.form-radio input[type='radio']:checked, form.form span.form-radio textarea.form-textarea[type='radio']:checked, form.form span.form-radio select.form-select[type='radio']:checked {
+span.form-radio input[type='radio']:checked, span.form-radio textarea.form-textarea[type='radio']:checked, span.form-radio select.form-select[type='radio']:checked {
   background-color: #199d76;
   border: 1px solid #199d76;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
 
-form.form span.form-radio input[type='radio']:focus, form.form span.form-radio textarea.form-textarea[type='radio']:focus, form.form span.form-radio select.form-select[type='radio']:focus {
+span.form-radio input[type='radio']:focus, span.form-radio textarea.form-textarea[type='radio']:focus, span.form-radio select.form-select[type='radio']:focus {
   outline: none;
   border: 1px solid #199d76;
   -webkit-box-shadow: 0 0 0 3px #52e3b8;
           box-shadow: 0 0 0 3px #52e3b8;
 }
 
-form.form span.form-radio.disabled {
+span.form-radio.disabled {
   color: #adb5bd;
   pointer-events: none;
 }
 
-form.form span.form-radio.disabled input[type='radio'], form.form span.form-radio.disabled textarea.form-textarea[type='radio'], form.form span.form-radio.disabled select.form-select[type='radio'] {
+span.form-radio.disabled input[type='radio'], span.form-radio.disabled textarea.form-textarea[type='radio'], span.form-radio.disabled select.form-select[type='radio'] {
   border: 1px solid #adb5bd;
 }
 
-form.form span.form-radio.disabled input[type='radio']:focus, form.form span.form-radio.disabled textarea.form-textarea[type='radio']:focus, form.form span.form-radio.disabled select.form-select[type='radio']:focus {
+span.form-radio.disabled input[type='radio']:focus, span.form-radio.disabled textarea.form-textarea[type='radio']:focus, span.form-radio.disabled select.form-select[type='radio']:focus {
   outline: none;
   border: 1px solid #adb5bd;
   -webkit-box-shadow: none;
@@ -1704,9 +1707,10 @@ form.form span.form-radio.disabled input[type='radio']:focus, form.form span.for
 }
 
 .modal .modal-dialog .modal-content {
-  padding: 0.5rem;
   background-color: #fff;
   border-radius: 0.5em;
+  padding: 0.5rem;
+  overflow: hidden;
 }
 
 .modal .modal-dialog .modal-content .modal-header {
@@ -1716,6 +1720,9 @@ form.form span.form-radio.disabled input[type='radio']:focus, form.form span.for
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .modal .modal-dialog .modal-content .modal-header .modal-title {
@@ -1882,5 +1889,25 @@ form.form span.form-radio.disabled input[type='radio']:focus, form.form span.for
     -webkit-transform: translate(-50%, -100%);
             transform: translate(-50%, -100%);
   }
+}
+
+body.modal-open {
+  overflow: hidden;
+  padding-right: 1em;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-sm {
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow-lg {
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 /*# sourceMappingURL=minBootstrap.css.map */

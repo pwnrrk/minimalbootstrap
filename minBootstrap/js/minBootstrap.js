@@ -30,17 +30,27 @@ function initmodal(){
 function open_modal(target){
     document.querySelectorAll(target).forEach(modal=>{
         modal.classList.add('showing')
+        document.body.classList.add('modal-open')
+        document.addEventListener('keyup',close_modal_esc)
     })
+}
+
+function close_modal_esc(ev){
+    if (ev.key == 'Escape'){
+        close_modal()
+    }
 }
 
 function close_modal(){
     document.querySelectorAll('.modal').forEach(modal => {
         if (modal.classList.contains('showing')){
             modal.classList.add('goingout')
+            document.removeEventListener('keyup',close_modal_esc)
             modal.addEventListener('animationend',()=>{
                 if(modal.classList.contains('goingout')){
                     modal.classList.remove('goingout')
                     modal.classList.remove('showing')
+                    document.body.classList.remove('modal-open')
                 }
             })
         }

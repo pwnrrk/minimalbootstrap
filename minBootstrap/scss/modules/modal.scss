@@ -47,15 +47,15 @@
 
         //Body
         .modal-content{
-            padding: $spacer;
             background-color: $white;
             border-radius: $radius;
-
+            padding: $spacer;
+            overflow: hidden;
             .modal-header{
                 display: flex;
                 flex-wrap: wrap;
                 width: 100%;
-
+                align-items: center;
                 .modal-title{
                     flex: 1 0 0%;
                     font-size: $font-size*1.5;
@@ -162,4 +162,9 @@
     to{
         transform: translate(-50%, -100%);
     }
+}
+
+body.modal-open{
+    overflow: hidden;
+    padding-right: 1em;
 }
