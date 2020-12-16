@@ -53,12 +53,12 @@ p{
 // Set Text color 
 @each $name,$color in $colors {
     .text-#{$name}{
-        color: $color;
+        color: $color !important;
     }
 }
 
 @each $name,$color in $color-scheme {
     .text-#{$name}{
-        color: $color;
+        color: $color !important;
     }
 }
