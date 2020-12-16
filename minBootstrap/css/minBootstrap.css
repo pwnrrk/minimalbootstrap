@@ -1574,8 +1574,6 @@ span.form-radio.disabled input[type='radio']:focus, span.form-radio.disabled tex
       -ms-flex: 1 0 0%;
           flex: 1 0 0%;
   width: auto;
-  -webkit-transition: max-height .5s ease;
-  transition: max-height .5s ease;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1600,7 +1598,7 @@ span.form-radio.disabled input[type='radio']:focus, span.form-radio.disabled tex
         -ms-flex: none;
             flex: none;
     width: 100%;
-    max-height: 0;
+    height: 0;
     pointer-events: none;
     overflow: hidden;
   }
@@ -1610,9 +1608,9 @@ span.form-radio.disabled input[type='radio']:focus, span.form-radio.disabled tex
 }
 
 .navbar-collapse.opened {
-  max-height: 100vh;
+  height: auto;
   pointer-events: all;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .navbar-toggler {
@@ -1637,6 +1635,42 @@ span.form-radio.disabled input[type='radio']:focus, span.form-radio.disabled tex
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
+  }
+}
+
+@-webkit-keyframes navbar-slidedown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 100vh;
+  }
+}
+
+@keyframes navbar-slidedown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 100vh;
+  }
+}
+
+@-webkit-keyframes navbar-slideup {
+  from {
+    max-height: 100vh;
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+@keyframes navbar-slideup {
+  from {
+    max-height: 100vh;
+  }
+  to {
+    max-height: 0;
   }
 }
 

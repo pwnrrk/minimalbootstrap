@@ -6,7 +6,39 @@ window.onload = () => {
 
 function initnavbar() {
     document.querySelectorAll('.navbar-toggler').forEach(e => {
-        e.addEventListener('click', ev => open_navbar(e.dataset.target))
+        e.addEventListener('click', ev => toggle_navbar(e.dataset.target))
+    })
+}
+
+function toggle_navbar(target) {
+    document.querySelectorAll(target).forEach(e => {
+        if (e.classList.contains('opened')) {
+            slideup_element(e)
+            e.classList.remove('opened')
+        } else {
+            e.classList.add('opened')
+            slidedown_element(e)
+        }
+    })
+}
+
+function slidedown_element(e){
+    e.animate([
+        {height: '0px'},
+        {height: `${e.offsetHeight}px`}
+    ], {
+        easing: 'ease',
+        duration: 300,
+    })
+}
+
+function slideup_element(e){
+    e.animate([
+        {height: `${e.offsetHeight}px`},
+        {height: '0px'}
+    ], {
+        easing: 'ease',
+        duration: 300,
     })
 }
 
@@ -58,16 +90,6 @@ function close_modal() {
     })
 }
 
-function open_navbar(target) {
-    document.querySelectorAll(target).forEach(e => {
-        if (e.classList.contains('opened')) {
-            e.classList.remove('opened')
-        } else {
-            e.classList.add('opened')
-        }
-    })
-}
-
 function initpopup() {
     document.querySelectorAll('.btn,a').forEach(e => {
         if (e.dataset.toggle == 'popup') {
@@ -78,23 +100,23 @@ function initpopup() {
 
 function open_popup(source, target) {
     document.querySelectorAll(target).forEach(popup => {
-        if(!popup.classList.contains('showing')){
+        if (!popup.classList.contains('showing')) {
             popup.classList.add('showing')
             popup.setAttribute('style', `left: ${source.offsetLeft = source.offsetWidth} ;top: ${source.offsetTop+source.offsetHeight+10}`)
-            popup.addEventListener('animationend',addPopDismiss)   
-        }     
+            popup.addEventListener('animationend', addPopDismiss)
+        }
     })
 }
 
-function addPopDismiss(){
+function addPopDismiss() {
     document.addEventListener('click', close_popup_trigger)
-    document.querySelectorAll('.popup').forEach(popup=>{
+    document.querySelectorAll('.popup').forEach(popup => {
         removePopupListener(popup)
     })
 }
 
-function removePopupListener(popup){
-    popup.removeEventListener('animationend',addPopDismiss)
+function removePopupListener(popup) {
+    popup.removeEventListener('animationend', addPopDismiss)
 }
 
 function close_popup_trigger(ev) {
@@ -107,7 +129,7 @@ function close_popup_trigger(ev) {
 
 function close_popup() {
     document.querySelectorAll('.popup').forEach(popup => {
-        if(popup.classList.contains('showing')){
+        if (popup.classList.contains('showing')) {
             popup.classList.add('goingout')
             document.removeEventListener('click', close_popup_trigger)
             popup.addEventListener('animationend', () => {
