@@ -26,6 +26,7 @@
             overflow: auto;
             padding-top: 1rem;
             font-family: monospace;
+            background-color: var(--light);
         }
 
         code {
@@ -183,7 +184,8 @@
     </div>
     <div class="m-5">
         <h2>Border Color</h2>
-        <p>Use bd and add "-color". <br> See available colors and color scheme in variables.scss or just press "f12" on this
+        <p>Use bd and add "-color". <br> See available colors and color scheme in variables.scss or just press "f12" on
+            this
             page.</p>
         <div class="row bg-light justify-content-center">
             <div class="bg-white bg-test m-1 rounded bd-primary">bd-primary</div>
@@ -255,7 +257,8 @@
     <div class="m-5">
         <h2>Form</h2>
         <p>
-            Cover form item with form-group will add space at top and bottom checkbox and radio will display inline when in it.<br> 
+            Cover form item with form-group will add space at top and bottom checkbox and radio will display inline when
+            in it.<br>
         </p>
         <div class="container">
             <form action="" method="GET" class="form">
@@ -442,12 +445,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title">Modal title</div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati maxime corporis est dolorem laudantium voluptatum dicta non earum sint beatae et aut dolores molestias neque vel, eius numquam explicabo odit!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati maxime corporis est dolorem
+                        laudantium voluptatum dicta non earum sint beatae et aut dolores molestias neque vel, eius
+                        numquam explicabo odit!</p>
                     <form action="" class="form">
                         <div class="form-group">
                             <label for="" class="form-item-label">Email</label>
@@ -468,21 +473,40 @@
     </div>
     <div class="m-5">
         <h2>Shadow</h2>
+        <p>Shadow use with shadow and -size for size ,available 3 size as below</p>
         <div class="row justify-content-center">
-            <div class="col-3 row justify-content-center">
-                <div class="bg-test bg-white shadow-sm rounded">shadow-sm</div>
-            </div>
-            <div class="col-3 row justify-content-center">
-                <div class="bg-test bg-white shadow rounded">shadow</div>
-            </div>
-            <div class="col-3 row justify-content-center">
-                <div class="bg-test bg-white shadow-lg rounded">shadow-lg</div>
-            </div>
+            <div class="bg-test bg-white shadow-sm rounded m-1">shadow-sm</div>
+            <div class="bg-test bg-white shadow rounded m-1">shadow</div>
+            <div class="bg-test bg-white shadow-lg rounded m-1">shadow-lg</div>
         </div>
+        <pre>
+    &lt;div class="bg-test bg-white shadow-sm rounded m-1"&gt;shadow-sm&lt;/div&gt;
+    &lt;div class="bg-test bg-white shadow rounded m-1"&gt;shadow&lt;/div&gt;
+    &lt;div class="bg-test bg-white shadow-lg rounded m-1"&gt;shadow-lg&lt;/div&gt;
+        </pre>
+    </div>
+    <div class="m-5">
+        <h2>Popup</h2>
+        <p>Popup can use for alert, menu, etc can trigger with btn class or a tag</p>
+        <button class="btn btn-primary" data-toggle="popup" data-target="#popup1">Trigger</button>
+        <div class="popup point-top" id="popup1">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est repudiandae officia distinctio <br> fugit
+                nemo nihil harum ratione aspernatur reiciendis eos aliquam laboriosam, <br> provident tempora modi rem
+                corporis ut voluptas error?</p>
+        </div>
+        <pre>
+    &lt;button class="btn btn-primary" data-toggle="popup" data-target="#popup1"&gt;Popup&lt;/button&gt;
+    &lt;div class="popup point-top" id="popup1"&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est repudiandae officia distinctio &lt;br&gt; fugit
+            nemo nihil harum ratione aspernatur reiciendis eos aliquam laboriosam, &lt;br&gt; provident tempora modi rem
+            corporis ut voluptas error?&lt;/p&gt;
+    &lt;/div&gt;
+        </pre>
     </div>
     <div class="m-5">
         <h2>Customizing</h2>
-        <p>Use scss for customizing by import minBootstrap.scss then you can overide some of variables and class style.</p>
+        <p>Use scss for customizing by import minBootstrap.scss then you can overide some of variables and class style.
+        </p>
     </div>
     <footer class="text-center bg-dark text-light p-1">
         <h3>2020 PWT-DEV</h3>

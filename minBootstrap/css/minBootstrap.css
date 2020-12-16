@@ -1906,8 +1906,95 @@ body.modal-open {
           box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow-lg {
+.shadow-lg, .popup {
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.popup {
+  background-color: #fff;
+  position: absolute;
+  padding: 0.5rem;
+  border-radius: 0.5em;
+  display: none;
+}
+
+.popup.showing {
+  display: block;
+  -webkit-animation: popup-show .3s ease;
+          animation: popup-show .3s ease;
+}
+
+.popup.goingout {
+  -webkit-animation: popup-hide .3s ease;
+          animation: popup-hide .3s ease;
+}
+
+.popup.point-top::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 1.5em;
+  border: 1em solid transparent;
+  border-top: none;
+  border-bottom-color: #fff;
+}
+
+.popup.point-left::before {
+  content: '';
+  position: absolute;
+  width: 10;
+  height: 0;
+  bottom: 80%;
+  left: -10;
+  border: 1em solid transparent;
+  border-top: none;
+  border-bottom-color: #fff;
+}
+
+@-webkit-keyframes popup-show {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes popup-show {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes popup-hide {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes popup-hide {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
 }
 /*# sourceMappingURL=minBootstrap.css.map */
