@@ -719,7 +719,7 @@ body {
   border: 1px solid #343a40;
 }
 
-.btn, .modal .modal-dialog .modal-content .modal-header .close {
+.btn, .navbar-dark .navbar-toggler, .navbar-light .navbar-toggler, .modal .modal-dialog .modal-content .modal-header .close {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -741,22 +741,22 @@ body {
   height: fit-content;
 }
 
-.btn:hover, .modal .modal-dialog .modal-content .modal-header .close:hover {
+.btn:hover, .navbar-dark .navbar-toggler:hover, .navbar-light .navbar-toggler:hover, .modal .modal-dialog .modal-content .modal-header .close:hover {
   background-color: #32373b;
 }
 
-.btn:focus, .modal .modal-dialog .modal-content .modal-header .close:focus {
+.btn:focus, .navbar-dark .navbar-toggler:focus, .navbar-light .navbar-toggler:focus, .modal .modal-dialog .modal-content .modal-header .close:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px #869099;
           box-shadow: 0 0 0 3px #869099;
 }
 
-.btn.disabled, .modal .modal-dialog .modal-content .modal-header .disabled.close {
+.btn.disabled, .navbar-dark .disabled.navbar-toggler, .navbar-light .disabled.navbar-toggler, .modal .modal-dialog .modal-content .modal-header .disabled.close {
   pointer-events: none;
   background-color: #869099;
 }
 
-.btn:disabled, .modal .modal-dialog .modal-content .modal-header .close:disabled {
+.btn:disabled, .navbar-dark .navbar-toggler:disabled, .navbar-light .navbar-toggler:disabled, .modal .modal-dialog .modal-content .modal-header .close:disabled {
   pointer-events: none;
   background-color: #869099;
 }
@@ -1478,8 +1478,21 @@ form.form span.form-radio.disabled input[type='radio']:focus, form.form span.for
 
 .navbar-dark .navbar-toggler {
   color: #f8f9fa;
-  -webkit-box-shadow: 0 0 0 2px #dae0e5;
-          box-shadow: 0 0 0 2px #dae0e5;
+  height: 1.5em;
+  width: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.5rem;
+  background: none;
+}
+
+.navbar-dark .navbar-toggler:hover {
+  background-color: rgba(52, 58, 64, 0.2);
+}
+
+.navbar-dark .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .navbar-light .navbar-brand {
@@ -1500,8 +1513,21 @@ form.form span.form-radio.disabled input[type='radio']:focus, form.form span.for
 
 .navbar-light .navbar-toggler {
   color: #343a40;
-  -webkit-box-shadow: 0 0 0 2px #1d2124;
-          box-shadow: 0 0 0 2px #1d2124;
+  height: 1.5em;
+  width: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.5rem;
+  background: none;
+}
+
+.navbar-light .navbar-toggler:hover {
+  background-color: rgba(248, 249, 250, 0.2);
+}
+
+.navbar-light .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .navbar-brand {
@@ -1713,6 +1739,11 @@ form.form span.form-radio.disabled input[type='radio']:focus, form.form span.for
 
 .modal .modal-dialog .modal-content .modal-header .close:hover {
   background-color: rgba(52, 58, 64, 0.2);
+}
+
+.modal .modal-dialog .modal-content .modal-header .close:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .modal .modal-dialog .modal-content .modal-body {

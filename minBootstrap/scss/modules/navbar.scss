@@ -19,7 +19,19 @@
         }
         .navbar-toggler{
             color: $light;
-            box-shadow: 0 0 0 2px darken($color: $light, $amount: $darken-amount);
+            @extend .btn;
+            height: $font-size*1.5;
+            width: $font-size*1.5;
+            font-size: $font-size;
+            font-weight: 600;
+            padding: $spacer;
+            background: none;
+            &:hover{
+                background-color: rgba($color: $dark, $alpha: 0.2);
+            }
+            &:focus{
+                box-shadow: none;
+            }
         }
     }
     &-light{
@@ -37,7 +49,19 @@
         }
         .navbar-toggler{
             color: $dark;
-            box-shadow: 0 0 0 2px darken($color: $dark, $amount: $darken-amount);
+            @extend .btn;
+            height: $font-size*1.5;
+            width: $font-size*1.5;
+            font-size: $font-size;
+            font-weight: 600;
+            padding: $spacer;
+            background: none;
+            &:hover{
+                background-color: rgba($color: $light, $alpha: 0.2);
+            }
+            &:focus{
+                box-shadow: none;
+            }
         }
     }
     &-brand{
