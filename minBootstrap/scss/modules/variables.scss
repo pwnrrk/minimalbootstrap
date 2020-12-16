@@ -107,6 +107,16 @@ $color-scheme: map-merge(
   transition: all .2s ease;
 }
 
+@mixin fullsize {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+}
+
 $tablet:770px;
 $mobile:450px;
 

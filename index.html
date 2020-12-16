@@ -398,6 +398,64 @@
         </div>
     </div>
     <div class="m-5">
+        <h2>Modal</h2>
+        <p>
+            Modal is available 3 size modal-sm, modal, modal-lg. <br>
+            Modal has 2 animation fade and slide. <br>
+            Modal must use structure below for prpoer use.
+        </p>
+        <h3>Trigger</h3>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+            Launch
+        </button>
+        <pre class="bg-light mb-5">
+    &lt;button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId"&gt;
+        Launch
+    &lt;/button&gt;
+        </pre>
+        <h3>Body</h3>
+        <pre>
+    &lt;div class="modal slide" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"&gt;
+        &lt;div class="modal-dialog" role="document"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;div class="modal-header"&gt;
+                    &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+                        &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+                            &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+                        &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-body"&gt;
+                    Body
+                &lt;/div&gt;
+                &lt;div class="modal-footer"&gt;
+                    &lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+                    &lt;button type="button" class="btn btn-primary"&gt;Save&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+        </pre>
+    </div>
+    <div class="modal slide" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    Body
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-5">
         <h2>Customizing</h2>
         <p>Use scss for customizing by import minBootstrap.scss then you can overide some of variables and class style.</p>
     </div>
@@ -405,6 +463,6 @@
         <h3>2020 PWT-DEV</h3>
     </footer>
 </body>
-<script src="./minBootstrap/js/minBootstrap.js"></script>
+<script src="./minBootstrap/js/minBootstrap.min.js"></script>
 
 </html>
