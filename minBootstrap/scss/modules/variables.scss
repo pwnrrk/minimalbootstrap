@@ -1,13 +1,15 @@
-$spacer: 0.5rem !default;
-$rounded: 1rem !default;
-$radius: 0.5em !default;
-$gutter: 30px !default;
-$darken-amount: 10 !default;
-$lighten-amount: 25 !default;
-$font-size: 1em;
-$font-family: Arial, Helvetica, sans-serif !default;
-$flex-align: ('start':flex-start, 'center':center, 'end':flex-end,);
+$spacer: 0.5rem !default; // Default spacer amount
+$rounded: 1rem !default; // Default border-radius for rouneded element amount
+$radius: 0.5em !default; // Default border-radius for general element amount
+$gutter: 30px !default; // Default gutter for row
+$darken-amount: 10 !default; // Default amount for darken variant of color
+$lighten-amount: 25 !default; // Default amount for lighten variant of color
+$font-size: 1em !default; // Default overall font-size amount
+$font-family: Arial, Helvetica, sans-serif !default; // Defaut overall web font family
 
+$flex-align: ('start':flex-start, 'center':center, 'end':flex-end,); // Flex align
+
+//Default color set
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -91,6 +93,9 @@ $color-scheme: map-merge(
   $color-scheme
 );
 
+//Mixin
+
+//Color for root
 @mixin color {
 
     @each $name,$color in $color-scheme {
@@ -103,10 +108,12 @@ $color-scheme: map-merge(
 
 }
 
+//Transition for general use
 @mixin transition {
   transition: all .2s ease;
 }
 
+//Fit screen size element
 @mixin fullsize {
   position: fixed;
   top: 0;
@@ -117,11 +124,14 @@ $color-scheme: map-merge(
   height: auto;
 }
 
-$tablet:770px;
-$mobile:450px;
+$tablet:770px; // Tablet breakpoint
+$mobile:450px; // mobile breakpoint
 
+// make root variables
 :root{
     @include color;
+    --font-family: $font-family;
+    --font-size: $font-size;
 }
 
 

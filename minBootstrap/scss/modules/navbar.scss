@@ -1,9 +1,12 @@
+//Navbar style
 .navbar{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
     padding: $spacer*1.5 0 $spacer*1.5 0;
+
+    //Dark variant
     &-dark{
         .navbar-brand{
             color: $light;
@@ -34,6 +37,8 @@
             }
         }
     }
+
+    //Light variant
     &-light{
         .navbar-brand{
             color: $dark;
@@ -64,6 +69,8 @@
             }
         }
     }
+
+    //Brand text
     &-brand{
         font-size: $font-size*1.5;
         text-decoration: none;
@@ -76,6 +83,8 @@
             flex: 1;
         }
     }
+
+    //Navbar Link
     &-link{
         border-radius: $radius;
         text-decoration: none;
@@ -86,6 +95,8 @@
             text-decoration: none;
         }
     }
+
+    //Responsive menu
     &-collapse{
         flex: 1 0 0%;
         width: auto;
@@ -116,6 +127,8 @@
             overflow: auto;
         }
     }
+
+    // Menu toggler
     &-toggler{
         display: none !important;
         justify-content: center;

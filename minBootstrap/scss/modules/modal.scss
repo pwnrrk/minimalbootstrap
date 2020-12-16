@@ -1,9 +1,11 @@
+//Modal
 .modal{
     @include fullsize;
     background-color: rgba($color: $dark, $alpha: 0.3);
     z-index: 2;
     overflow-y: auto;
 
+    //Small size
     &.modal-sm{
         .modal-dialog{
             width: 30%;
@@ -15,6 +17,8 @@
             }
         }
     }
+
+    //Large size
     &.modal-lg{
         .modal-dialog{
             width: 60%;
@@ -27,6 +31,7 @@
         }
     }
 
+    //Wrapper
     .modal-dialog{
         position: absolute;
         top: 10%;
@@ -39,6 +44,8 @@
         @media (max-width:$mobile) {
             width: 80%;
         }
+
+        //Body
         .modal-content{
             padding: $spacer;
             background-color: $white;
