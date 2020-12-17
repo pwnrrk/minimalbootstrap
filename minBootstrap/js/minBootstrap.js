@@ -2,43 +2,70 @@ window.onload = () => {
     initnavbar()
     initmodal()
     initpopup()
+    initAnimateSlideStyle()
 }
 
 function initnavbar() {
     document.querySelectorAll('.navbar-toggler').forEach(e => {
-        e.addEventListener('click', ev => toggle_navbar(e.dataset.target))
+        e.addEventListener('click', ev => toggleNavbar(e.dataset.target))
     })
 }
 
-function toggle_navbar(target) {
+function toggleNavbar(target) {
     document.querySelectorAll(target).forEach(e => {
         if (e.classList.contains('opened')) {
-            slideup_element(e)
+            slideUpElement(e)
             e.classList.remove('opened')
         } else {
             e.classList.add('opened')
-            slidedown_element(e)
+            slideDownElement(e)
         }
     })
 }
 
-function slidedown_element(e){
-    e.animate([
-        {height: '0px'},
-        {height: `${e.offsetHeight}px`}
-    ], {
-        easing: 'ease',
-        duration: 300,
+function initAnimateSlideStyle(){
+    let style = document.createElement('style')
+    style.id = 'mb-slide-elm'
+    document.querySelectorAll('head').forEach(h=>{
+        h.append(style)
     })
 }
 
-function slideup_element(e){
-    e.animate([
-        {height: `${e.offsetHeight}px`},
-        {height: '0px'}
-    ], {
-        easing: 'ease',
-        duration: 300,
+function slideDownElement(e){
+    document.querySelectorAll('#mb-slide-elm').forEach(slide=>{
+        slide.innerHTML = `
+        @keyframes slide-elm-down {
+            from{
+                height: 0px;
+            }
+            to{
+                height: ${e.offsetHeight}px;
+            }
+        }
+        `
+    })
+    e.setAttribute('style','animation: slide-elm-down .3s ease;')
+    e.addEventListener('animationend',()=>{
+        e.removeAttribute('style')
+    })
+}
+
+function slideUpElement(e){
+    document.querySelectorAll('#mb-slide-elm').forEach(slide=>{
+        slide.innerHTML = `
+        @keyframes slide-elm-up {
+            from{
+                height: ${e.offsetHeight}px;
+            }
+            to{
+                height: 0px;
+            }
+        }
+        `
+    })
+    e.setAttribute('style','animation: slide-elm-up .3s ease;')
+    e.addEventListener('animationend',()=>{
+        e.removeAttribute('style')
     })
 }
 
@@ -47,38 +74,38 @@ function initmodal() {
         if (e.classList.contains('modal')) {
             e.addEventListener('click', ev => {
                 if (ev.target == e) {
-                    close_modal()
+                    closeModal()
                 }
             })
         }
         if (e.dataset.toggle == 'modal') {
-            e.addEventListener('click', ev => open_modal(e.dataset.target))
+            e.addEventListener('click', ev => openModal(e.dataset.target))
         }
         if (e.dataset.dismiss == 'modal') {
-            e.addEventListener('click', close_modal)
+            e.addEventListener('click', closeModal)
         }
     })
 }
 
-function open_modal(target) {
+function openModal(target) {
     document.querySelectorAll(target).forEach(modal => {
         modal.classList.add('showing')
         document.body.classList.add('modal-open')
-        document.addEventListener('keyup', close_modal_esc)
+        document.addEventListener('keyup', closeModalEsc)
     })
 }
 
-function close_modal_esc(ev) {
+function closeModalEsc(ev) {
     if (ev.key == 'Escape') {
-        close_modal()
+        closeModal()
     }
 }
 
-function close_modal() {
+function closeModal() {
     document.querySelectorAll('.modal').forEach(modal => {
         if (modal.classList.contains('showing')) {
             modal.classList.add('goingout')
-            document.removeEventListener('keyup', close_modal_esc)
+            document.removeEventListener('keyup', closeModalEsc)
             modal.addEventListener('animationend', () => {
                 if (modal.classList.contains('goingout')) {
                     modal.classList.remove('goingout')
@@ -93,12 +120,12 @@ function close_modal() {
 function initpopup() {
     document.querySelectorAll('.btn,a').forEach(e => {
         if (e.dataset.toggle == 'popup') {
-            e.addEventListener('click', ev => open_popup(e, e.dataset.target))
+            e.addEventListener('click', ev => openPopup(e, e.dataset.target))
         }
     })
 }
 
-function open_popup(source, target) {
+function openPopup(source, target) {
     document.querySelectorAll(target).forEach(popup => {
         if (!popup.classList.contains('showing')) {
             popup.classList.add('showing')
@@ -109,7 +136,7 @@ function open_popup(source, target) {
 }
 
 function addPopDismiss() {
-    document.addEventListener('click', close_popup_trigger)
+    document.addEventListener('click', closePopupTrigger)
     document.querySelectorAll('.popup').forEach(popup => {
         removePopupListener(popup)
     })
@@ -119,19 +146,19 @@ function removePopupListener(popup) {
     popup.removeEventListener('animationend', addPopDismiss)
 }
 
-function close_popup_trigger(ev) {
+function closePopupTrigger(ev) {
     document.querySelectorAll('.popup').forEach(popup => {
         if (ev.target != popup) {
-            close_popup()
+            closePopup()
         }
     })
 }
 
-function close_popup() {
+function closePopup() {
     document.querySelectorAll('.popup').forEach(popup => {
         if (popup.classList.contains('showing')) {
             popup.classList.add('goingout')
-            document.removeEventListener('click', close_popup_trigger)
+            document.removeEventListener('click', closePopupTrigger)
             popup.addEventListener('animationend', () => {
                 if (popup.classList.contains('goingout')) {
                     popup.classList.remove('goingout')
