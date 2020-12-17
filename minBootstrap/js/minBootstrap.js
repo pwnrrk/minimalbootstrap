@@ -3,25 +3,50 @@ window.onload = () => {
     initmodal()
     initpopup()
     initAnimateSlideStyle()
+    initCollapse()
 }
 
 function initnavbar() {
     document.querySelectorAll('.navbar-toggler').forEach(e => {
-        e.addEventListener('click', ev => toggleNavbar(e.dataset.target))
+        e.addEventListener('click', ev => toggleCollapse(e.dataset.target))
     })
 }
 
-function toggleNavbar(target) {
+function toggleCollapse(target) {
     document.querySelectorAll(target).forEach(e => {
         if (e.classList.contains('opened')) {
             slideUpElement(e)
+
+            function slideRemove(){
+                if(e.classList.contains('opened')){
+                    e.classList.remove('opened')               
+                }
+                removeSlideHandler(e)   
+            }
+
+            function removeSlideHandler(){
+                e.removeEventListener('animationend',slideRemove)
+                e.removeEventListener('webkitAnimationEnd',slideRemove)
+            }
+
             e.addEventListener('animationend',slideRemove)
+            e.addEventListener('webkitAnimationEnd',slideRemove)
         } else {
             e.classList.add('opened')
             slideDownElement(e)
         }
     })
 }
+
+function initCollapse(){
+    document.querySelectorAll('a,.btn').forEach(e=>{
+        if (e.dataset.toggle == 'collapse'){
+            e.addEventListener('click', ev => toggleCollapse(e.dataset.target))
+        }
+    })
+}
+
+
 
 function initAnimateSlideStyle(){
     let style = document.createElement('style')
@@ -31,16 +56,6 @@ function initAnimateSlideStyle(){
     })
 }
 
-function slideRemove(e){
-    e = e.path[0]
-    if(e.classList.contains('opened')){
-        e.classList.remove('opened')               
-    }
-    removeSlideHandler(e)   
-}
-function removeSlideHandler(e){
-    e.removeEventListener('animationend',slideRemove)
-}
 function slideDownElement(e){
     document.querySelectorAll('#mb-slide-elm').forEach(slide=>{
         slide.innerHTML = `

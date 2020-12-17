@@ -121,6 +121,7 @@ a {
   color: #199d76;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  cursor: pointer;
 }
 
 a:hover {
