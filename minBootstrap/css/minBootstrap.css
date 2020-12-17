@@ -1947,25 +1947,27 @@ body.modal-open {
           animation: popup-hide .3s ease;
 }
 
-.popup.point-top::before {
+.popup.dash-right.point::before {
+  content: '';
+  position: absolute;
+  width: 10;
+  height: 0;
+  bottom: 70%;
+  left: -25;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  border: 1em solid transparent;
+  border-top: none;
+  border-bottom-color: #fff;
+}
+
+.popup.point::before {
   content: '';
   position: absolute;
   width: 0;
   height: 0;
   bottom: 100%;
   left: 1.5em;
-  border: 1em solid transparent;
-  border-top: none;
-  border-bottom-color: #fff;
-}
-
-.popup.point-left::before {
-  content: '';
-  position: absolute;
-  width: 10;
-  height: 0;
-  bottom: 80%;
-  left: -10;
   border: 1em solid transparent;
   border-top: none;
   border-bottom-color: #fff;

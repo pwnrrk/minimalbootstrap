@@ -13,7 +13,22 @@
         animation: popup-hide .3s ease;
     }
 
-    &.point-top{
+    &.dash-right{
+        &.point::before {
+            content: '';
+            position: absolute;
+            width: 10;
+            height: 0;
+            bottom: 70%;
+            left: -25;
+            transform: rotate(270deg);
+            border: $font-size solid transparent;
+            border-top: none;
+            border-bottom-color: $white;
+        }
+    }
+
+    &.point{
         &::before {
             content: '';
             position: absolute;
@@ -21,19 +36,6 @@
             height: 0;
             bottom: 100%;
             left: 1.5em;
-            border: $font-size solid transparent;
-            border-top: none;
-            border-bottom-color: $white;
-        }
-    }
-    &.point-left{
-        &::before {
-            content: '';
-            position: absolute;
-            width: 10;
-            height: 0;
-            bottom: 80%;
-            left: -10;
             border: $font-size solid transparent;
             border-top: none;
             border-bottom-color: $white;

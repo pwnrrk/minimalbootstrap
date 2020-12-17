@@ -136,10 +136,15 @@ function initpopup() {
 }
 
 function openPopup(source, target) {
+    closePopup()
     document.querySelectorAll(target).forEach(popup => {
         if (!popup.classList.contains('showing')) {
             popup.classList.add('showing')
-            popup.setAttribute('style', `left: ${source.offsetLeft = source.offsetWidth} ;top: ${source.offsetTop+source.offsetHeight+10}`)
+            if(popup.classList.contains('dash-right')){
+                popup.setAttribute('style', `left: ${source.offsetLeft + source.offsetWidth} ;top: ${source.offsetTop}`)
+            }else{
+                popup.setAttribute('style', `left: ${source.offsetLeft} ;top: ${source.offsetTop+source.offsetHeight+10}`)
+            }
             popup.addEventListener('animationend', addPopDismiss)
         }
     })
@@ -159,9 +164,11 @@ function removePopupListener(popup) {
 function closePopupTrigger(ev) {
     document.querySelectorAll('.popup').forEach(popup => {
         if (ev.target != popup) {
-            closePopup()
+            if(popup.classList.contains('showing')){
+                closePopup()
+            }
         }
-    })
+    }) 
 }
 
 function closePopup() {

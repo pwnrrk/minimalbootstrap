@@ -488,11 +488,19 @@
     <div class="m-5">
         <h2>Popup</h2>
         <p>Popup can use for alert, menu, etc can trigger with btn class or a tag</p>
-        <button class="btn btn-primary" data-toggle="popup" data-target="#popup1">Trigger</button>
-        <div class="popup point-top" id="popup1">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est repudiandae officia distinctio <br> fugit
-                nemo nihil harum ratione aspernatur reiciendis eos aliquam laboriosam, <br> provident tempora modi rem
-                corporis ut voluptas error?</p>
+        <div class="row">
+            <div class="m-1">
+                <button class="btn btn-primary" data-toggle="popup" data-target="#popup1">Default</button>
+                <div class="popup" id="popup1">
+                    <h3>Popup Default</h3>
+                </div>
+            </div>
+            <div class="m-1">
+                <button class="btn btn-primary" data-toggle="popup" data-target="#popup2">Dash right</button>
+                <div class="popup dash-right" id="popup2">
+                    <h3>Popup dash right</h3>
+                </div>
+            </div>
         </div>
         <pre>
     &lt;button class="btn btn-primary" data-toggle="popup" data-target="#popup1"&gt;Popup&lt;/button&gt;
