@@ -1597,6 +1597,7 @@ span.form-radio.disabled input[type='radio']:focus, span.form-radio.disabled tex
 }
 
 .navbar-collapse ul {
+  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;

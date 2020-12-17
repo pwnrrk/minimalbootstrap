@@ -167,6 +167,7 @@ function openPopup(source, target) {
 
 function addPopDismiss() {
     document.addEventListener('click', closePopupTrigger)
+    //document.addEventListener('touchstart',closePopupTrigger)
     document.querySelectorAll('.popup').forEach(popup => {
         removePopupListener(popup)
     })
@@ -178,10 +179,14 @@ function removePopupListener(popup) {
 
 function closePopupTrigger(ev) {
     document.querySelectorAll('.popup').forEach(popup => {
-        if (ev.target != popup) {
-            if(popup.classList.contains('showing')){
-                closePopup()
-            }
+        if (ev.target!=popup) {
+            Array().forEach.call(popup.children,child=>{
+                if(ev.target!=child){
+                    if(popup.classList.contains('showing')){
+                        closePopup()
+                    }
+                }
+            })
         }
     }) 
 }
