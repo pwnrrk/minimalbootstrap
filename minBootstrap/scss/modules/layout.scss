@@ -1,41 +1,63 @@
-body{
+body {
     box-sizing: border-box;
     margin: 0 !important;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
-.row{
+
+.row {
     display: flex;
     flex-wrap: wrap;
     margin-right: -$gutter / 2;
     margin-left: -$gutter / 2;
 }
-.container{
+
+.container {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
     padding: $spacer;
-    &-fulid{
+
+    &-fulid {
         width: 100%;
     }
 }
-@each $name,$align in $flex-align {
-    .align-items-#{$name}{
+
+.collapse {
+    height: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transition: height .3s ease;
+    &.opened {
+        height: auto;
+        pointer-events: all;
+        overflow: hidden;
+    }
+}
+
+@each $name,
+$align in $flex-align {
+    .align-items-#{$name} {
         align-items: $align;
     }
-    .align-self-#{$name}{
+
+    .align-self-#{$name} {
         align-self: $align;
     }
-    .justify-content-#{$name}{
+
+    .justify-content-#{$name} {
         justify-content: $align;
     }
 }
-.col{
+
+.col {
     flex: 1 0 0%;
 }
+
 @for $i from 1 through 12 {
-    .col-#{$i}{
+    .col-#{$i} {
         flex: 0 0 percentage($i / 12);
         max-width: percentage($i / 12);
     }

@@ -15,7 +15,7 @@ function toggleNavbar(target) {
     document.querySelectorAll(target).forEach(e => {
         if (e.classList.contains('opened')) {
             slideUpElement(e)
-            e.classList.remove('opened')
+            e.addEventListener('animationend',slideRemove)
         } else {
             e.classList.add('opened')
             slideDownElement(e)
@@ -31,20 +31,30 @@ function initAnimateSlideStyle(){
     })
 }
 
+function slideRemove(e){
+    e = e.path[0]
+    if(e.classList.contains('opened')){
+        e.classList.remove('opened')               
+    }
+    removeSlideHandler(e)   
+}
+function removeSlideHandler(e){
+    e.removeEventListener('animationend',slideRemove)
+}
 function slideDownElement(e){
     document.querySelectorAll('#mb-slide-elm').forEach(slide=>{
         slide.innerHTML = `
         @keyframes slide-elm-down {
             from{
-                height: 0px;
+                max-height: 0px;   
             }
             to{
-                height: ${e.offsetHeight}px;
+                max-height: ${e.offsetHeight}px;
             }
         }
         `
     })
-    e.setAttribute('style','animation: slide-elm-down .3s ease;')
+    e.setAttribute('style','animation: slide-elm-down .3s ease;will-change:height;')
     e.addEventListener('animationend',()=>{
         e.removeAttribute('style')
     })
@@ -55,10 +65,10 @@ function slideUpElement(e){
         slide.innerHTML = `
         @keyframes slide-elm-up {
             from{
-                height: ${e.offsetHeight}px;
+                max-height: ${e.offsetHeight}px;
             }
             to{
-                height: 0px;
+                max-height: 0px;
             }
         }
         `
