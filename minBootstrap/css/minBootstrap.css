@@ -279,8 +279,6 @@ html {
   height: 0;
   pointer-events: none;
   overflow: hidden;
-  -webkit-transition: height .3s ease;
-  transition: height .3s ease;
 }
 
 .collapse.opened {
@@ -1595,8 +1593,6 @@ span.form-radio.disabled input[type='radio']:focus, span.form-radio.disabled tex
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: height .3s ease;
-  transition: height .3s ease;
 }
 
 .navbar-collapse ul {

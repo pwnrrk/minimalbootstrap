@@ -29,7 +29,6 @@ html {
     height: 0;
     pointer-events: none;
     overflow: hidden;
-    transition: height .3s ease;
     &.opened {
         height: auto;
         pointer-events: all;
