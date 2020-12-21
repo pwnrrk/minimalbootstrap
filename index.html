@@ -53,7 +53,7 @@
     </div>
     <div class="m-5">
         <h2>Version</h2>
-        <h3>0.1.5 alpha</h3>
+        <h3>0.1.7-alpha</h3>
     </div>
     <div class="m-5">
         <h2>Installation</h2>
@@ -66,26 +66,15 @@
     </div>
     <div class="m-5">
         <h3>Row</h3>
-        <p>Use row for trigger flex style then use col as child for auto flexing. col-{1-12} for sizing<br>
+        <p>Use row for trigger flex style then use col as child for grid system col-{1-12} for sizing<br>
             If col-{number} summary with other in parent row are over 12 it will move to next line. <br>
-            Element in row will have 100% width if not sizing or wrap with col;
+            Element in row will have 100% width if not sizing or wrap with col; <br>
+            col-{breakpoint}-{1-2} for specify when will stop flexing available at sm , m <br>
         </p>
         <div class="row bg-light">
             <div class="col col-test bd-gray">col</div>
             <div class="col col-test bd-gray">col</div>
             <div class="col col-test bd-gray">col</div>
-        </div>
-        <div class="row bg-light mt-2">
-            <div class="col-10 col-test bd-gray">col-10</div>
-            <div class="col-2 col-test bd-gray">col-2</div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-10 col-test bg-light bd-gray">col-10</div>
-            <div class="col-5 col-test bg-light bd-gray">col-5</div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-sm-6 col-test bd-gray">col-m-6</div>
-            <div class="col-sm-2 col-test bd-gray">col-m-2</div>
         </div>
         <pre class="bg-light mb-5">
     &lt;div class="row">
@@ -94,11 +83,13 @@
         &lt;div class="col">col&lt;/div&gt;
     &lt;/div &gt;
         </pre>
-        <h3>Vertical align</h3>
+        <h3>Flex</h3>
+        <p>If you just need inline display use flex instead and still can use col for sizing</p>
         <p>
             Use align-item-{position} on row or align-self-{position} on child<br>
             Available position: start, center, end.
         </p>
+        <h3>Vertical align</h3>
         <div class="row bg-light align-items-center" style="height: 200px;">
             <div class="col col-test bd-gray">col</div>
             <div class="col col-test bd-gray">col</div>
@@ -264,15 +255,14 @@
             Use btn-{sm,lg} for sizing. <br>
             btn can use with what ever element up to purposes. <br>
         </p>
-        <div class="row justify-content-center">
-            <div><button class="btn btn-sm btn-primary m-1">btn-sm</button>
-                <button class="btn btn-primary m-1">btn-primary</button>
-                <button class="btn btn-lg btn-primary m-1">btn-lg</button>
-                <button class="btn btn-primary m-1" disabled>btn-primary disabled</button>
-                <button class="btn btn-secondary m-1">btn-secondary</button>
-                <button class="btn btn-primary-outline m-1">btn-primary-outline</button>
-                <button class="btn btn-secondary-outline m-1">btn-secondary-outline</button>
-            </div>
+        <div class="flex justify-content-center align-items-center">
+            <button class="btn btn-sm btn-primary m-1">btn-sm</button>
+            <button class="btn btn-primary m-1">btn-primary</button>
+            <button class="btn btn-lg btn-primary m-1">btn-lg</button>
+            <button class="btn btn-primary m-1" disabled>btn-primary disabled</button>
+            <button class="btn btn-secondary m-1">btn-secondary</button>
+            <button class="btn btn-primary-outline m-1">btn-primary-outline</button>
+            <button class="btn btn-secondary-outline m-1">btn-secondary-outline</button>
         </div>
 
         <pre class="bg-light mb-5">
