@@ -1,0 +1,3 @@
+[submodule "minbootstrap"]
+	path = minbootstrap
+	url = https://github.com/pwnrrk/minbootstrap
