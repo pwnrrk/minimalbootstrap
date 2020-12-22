@@ -1,1 +1,1 @@
-# Minimal Bootstrap Framework 
+# Minimal Bootstrap Document
