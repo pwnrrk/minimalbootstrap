@@ -53,7 +53,7 @@
     </div>
     <div class="m-5">
         <h2>Version</h2>
-        <h3>1.0.0</h3>
+        <h3>1.1.0</h3>
     </div>
     <div class="m-5">
         <h2>Installation</h2>
@@ -437,7 +437,9 @@
         <p>
             Modal is available 3 size modal-sm, modal, modal-lg. <br>
             Modal has 3 animation fade bonce and slide. <br>
-            Modal must write in structure below for use.
+            Modal must write in structure below for use. <br>
+            Modal with static will not close when click outside modal or press ESC <br>
+            Modal available with tl tr bl br for position.
         </p>
         <h3>Trigger</h3>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
@@ -471,7 +473,7 @@
     &lt;/div&gt;
         </pre>
     </div>
-    <div class="modal modal-lg bonce" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal modal-lg slide static" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
