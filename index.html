@@ -51,7 +51,7 @@
         <h1 class="text-primary">MINIMAL BOOTSTRAP</h1>
         <h2 class="text-secondary">Minimal Bootstrap Framework</h2>
         <h2>Version</h2>
-        <h3>1.4.1</h3>
+        <h3>1.4.2</h3>
         <h2>Release Note</h2>
         <a href="https://github.com/pwnrrk/minbootstrap/releases" title="Release Note">Github</a>
         <h2>Installation</h2>
@@ -521,14 +521,16 @@
         &lt;/div&gt;
     </pre>
         <h3>Dropdowns</h3>
-        <p>Dropdowns need a structure below to work properly. <br> Dropdowns will close after click outter or inner element. </p>
+        <p>Dropdowns need a structure below to work properly. <br>
+            add dropdown-link class to child will automatically close popup
+        </p>
         <div class="m-1">
             <button class="btn btn-primary" data-toggle="dropdown" data-target="#dropdown1">Toggle</button>
             <div class="dropdown" id="dropdown1">
                 <ul>
-                    <li><a href="#"><div>Item 1</div></a></li>
-                    <li><a href="#"><div>Item 2</div></a></li>
-                    <li><a href="#"><div>Item 3</div></a></li>
+                    <li><a class="dropdown-link"><div>dropdown-link 1</div></a></li>
+                    <li><a class="dropdown-link"><div>dropdown-link 2</div></a></li>
+                    <li><a><div>&lt;a&gt; tag Non dropdown-link</div></a></li>
                 </ul>
             </div>
         </div>
