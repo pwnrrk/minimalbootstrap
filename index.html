@@ -51,9 +51,11 @@
         <h1 class="text-primary">MINIMAL BOOTSTRAP</h1>
         <h2 class="text-secondary">Minimal Bootstrap Framework</h2>
         <h2>Version</h2>
-        <h3>1.4.2</h3>
+        <h3 id="version"></h3>
         <h2>Release Note</h2>
-        <a href="https://github.com/pwnrrk/minbootstrap/releases" title="Release Note">Github</a>
+        <h3 id="release-title"></h3>
+        <p id="release-body"></p>
+        <a href="https://github.com/pwnrrk/minbootstrap/releases" title="Release Note">Older</a>
         <h2>Installation</h2>
         <pre class="bg-light">
     $ npm install @r.phuwanat/minbootstrap
@@ -615,6 +617,20 @@
             ev.target.classList.add('invalid')
         }
     }
+    function getVersion(){
+        let xmlhttp = new XMLHttpRequest()
+        xmlhttp.onreadystatechange = function(){
+            if(this.status == 200 && this.readyState == 4){
+                let res = JSON.parse(this.responseText)
+                document.getElementById('version').innerText = res[0].tag_name
+                document.getElementById('release-title').innerText = res[0].name
+                document.getElementById('release-body').innerText = res[0].body
+            }
+        }
+        xmlhttp.open('GET','https://api.github.com/repos/pwnrrk/minbootstrap/releases')
+        xmlhttp.send()
+    }
+    getVersion()
 </script>
 
 </html>
