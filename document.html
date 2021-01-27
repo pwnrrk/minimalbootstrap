@@ -1,0 +1,799 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Bootstrap</title>
+    <link rel="stylesheet" href="./minbootstrap/css/minBootstrap.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark.min.css">
+    <style>
+        .bg-test {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .col-test {
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        pre {
+            width: 100%;
+            overflow: auto;
+            padding-top: 1rem;
+            font-family: monospace;
+            background-color: var(--dark);
+        }
+
+        pre * {
+            font-family: monospace;
+        }
+
+        code {
+            font-family: monospace;
+        }
+
+        .variables-table {
+            border-collapse: collapse;
+        }
+
+        .variables-table td,
+        th {
+            border: 1px solid #dddddd;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-dark navbar-dark">
+        <button class="navbar-toggler" data-target="#navbar-col" style="font-size: 1.3rem;">
+            <svg data-v-3fe0c21f="" class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" focusable="false"
+                data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                data-fa-i2svg="" style="width: 100%;">
+                <path fill="currentColor"
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16h26C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16h26c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16h26c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                </path>
+            </svg>
+        </button>
+        <div class="navbar-collapse" id="navbar-col">
+            <ul>
+                <li><a href="/" class="navbar-link">Home</a></li>
+                <li><a href="/document.html" class="navbar-link active">Document</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row nm">
+        <div style="width: auto;">
+            <div class="bg-light">
+                <div class="pt-1 pl-1 pr-5" style="height: 100%;">
+                    <div class="side-menu" style="line-height: 30px;">
+                        <h2>Content</h2>
+                        <ul style="list-style:none;" class="np">
+                            <li>
+                                <a class="text-dark" data-toggle="collapse" data-target="#basic"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                    </svg> Basic</a>
+                                <div class="collapse" id="basic">
+                                    <ul style="list-style: none;" class="pl-1">
+                                        <li><a href="#text" class="text-dark">Text</a></li>
+                                        <li><a href="#layout" class="text-dark">Layout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="text-dark" data-toggle="collapse" data-target="#utility"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                    </svg> Utility</a>
+                                <div class="collapse" id="utility">
+                                    <ul style="list-style: none;" class="pl-1">
+                                        <li><a href="#background" class="text-dark">Background</a></li>
+                                        <li><a href="#margin" class="text-dark">Margin</a></li>
+                                        <li><a href="#padding" class="text-dark">Padding</a></li>
+                                        <li><a href="#border" class="text-dark">Border</a></li>
+                                        <li><a href="#shadow" class="text-dark">Shadow</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="text-dark" data-toggle="collapse" data-target="#component"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                    </svg> Component</a>
+                                <div class="collapse" id="component">
+                                    <ul style="list-style: none;" class="pl-1">
+                                        <li><a href="#container" class="text-dark">Container</a></li>
+                                        <li><a href="#button" class="text-dark">Buttons</a></li>
+                                        <li><a href="#form" class="text-dark">Form</a></li>
+                                        <li><a href="#navbar" class="text-dark">Navigation Bar</a></li>
+                                        <li><a href="#modal" class="text-dark">Modal</a></li>
+                                        <li><a href="#popup" class="text-dark">Popup</a></li>
+                                        <li><a href="#dropdown" class="text-dark">Dropdown</a></li>
+                                        <li><a href="#collapse" class="text-dark">Collapse</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="text-dark" data-toggle="collapse" data-target="#other"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                    </svg> Other</a>
+                                <div class="collapse" id="other">
+                                    <ul style="list-style: none;" class="pl-1">
+                                        <li><a href="#customize" class="text-dark">Customizing</a></li>
+                                        <li><a href="#bug" class="text-dark">Bugs</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-2">
+                <h2 id="text">Text</h2>
+                <p>
+                    We support some text class with color, align, weight
+                </p>
+                <div>
+                    <h4>
+                        The h tag will reduced font weight to 500.
+                    </h4>
+                    <div class="bg-light">
+                        <h2>Heading</h2>
+                        <h2>Heading</h2>
+                        <h3>Heading</h3>
+                    </div>
+                    <h4>Text color</h4>
+                    <p>Add text-{color} class to custom text color</p>
+                    <div><span class="text-red">text-red</span> <span class="text-primary">text-primary</span></div>
+                    <h4>
+                        Link
+                    </h4>
+                    <div><a href="#">Link default</a> <a href="#" class="text-red">Link with custom color</a></div>
+                    <h4>Font Weight</h4>
+                    <p>Add font-{weight} class to custom font weight.</p>
+                    <div>
+                        <h3 class="font-600">font-600</h3>
+                        <h3 class="font-400">font-400</h3>
+                    </div>
+                </div>
+                <h2 id="layout">Row</h2>
+                <p>Use row for trigger flex style then use col as child for grid system col-{1-12} for sizing<br>
+                    If col-{number} summary with other in parent row are over 12 it will move to next line. <br>
+                    Element in row will have 100% width if not sizing or wrap with col; <br>
+                    col-{breakpoint}-{1-2} for specify when will stop flexing available at sm , m ,l ,xl ,xxl<br>
+                </p>
+                <div class="row ">
+                    <div class="col col-test bd-gray">col</div>
+                    <div class="col col-test bd-gray">col</div>
+                    <div class="col col-test bd-gray">col</div>
+                </div>
+                <pre class="html mb-5">
+
+    &lt;div class="row"&gt;
+        &lt;div class="col">col&lt;/div&gt;
+        &lt;div class="col">col&lt;/div&gt;
+        &lt;div class="col">col&lt;/div&gt;
+    &lt;/div&gt;
+
+</pre>
+                <h2>Flex</h2>
+                <p>If you just need inline display use flex instead and still can use col for sizing</p>
+                <p>
+                    Use align-item-{position} on row or align-self-{position} on child<br>
+                    Available position: start, center, end.
+                </p>
+                <h2>Vertical align</h2>
+                <div class="row  align-items-center" style="height: 200px;">
+                    <div class="col col-test bd-gray">col</div>
+                    <div class="col col-test bd-gray">col</div>
+                    <div class="col col-test bd-gray">col</div>
+                </div>
+                <pre class="html mb-5">
+
+    &lt;div class="row align-items-center"&gt;
+        &lt;div class="col"> col &lt;/div&gt;
+        &lt;div class="col"> col &lt;/div&gt;
+        &lt;div class="col"> col &lt;/div&gt;
+    &lt;/div&gt;
+
+</pre>
+                <h2>Horizontal align</h2>
+                <p>
+                    Use justify-content-{position} on row<br>
+                    Available position: start, center, end, around, even and between.
+                </p>
+                <div class="" style="width: 100%;">
+                    <div class="row  pb-1 justify-content-center">
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                    </div>
+                    <div class="row  pb-1 justify-content-start">
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                    </div>
+                    <div class="row  justify-content-end">
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 col-test bd-gray">col-3</div>
+                    </div>
+                </div>
+
+                <pre class="html mb-5">
+
+    &lt;div class="row justify-content-center"&gt;
+        &lt;div class="col-3"> col &lt;/div&gt;
+        &lt;div class="col-3"> col &lt;/div&gt;
+        &lt;div class="col-3"> col &lt;/div&gt;
+    &lt;/div&gt;
+
+</pre>
+                <h2 id="background">Background</h2>
+                <p>
+                    Use bg-{color}<br>
+                </p>
+                <div class="row justify-content-center">
+                    <div class="bg-primary bg-test text-white m-1">bg-primary</div>
+                    <div class="bg-secondary bg-test text-white m-1">bg-secondary</div>
+                    <div class="bg-dark bg-test text-white m-1">bg-dark</div>
+                </div>
+
+                <pre class="html mb-5">
+
+    &lt;div class="bg-primary">&lt;/div&gt;
+
+</pre>
+                <h2 id="margin">Margin</h2>
+                <p>
+                    Use m-{1-5}<br>
+                    Use m{direction}-{1-5} for spacify direction , available t = top ,r = right ,b = bottom ,l = left .
+                    <br>
+                    Use nm for remove margin.
+                </p>
+                <div class="row  justify-content-center">
+                    <div class="bg-secondary bg-test m-1 text-light">m-1</div>
+                </div>
+
+                <pre class="html mb-5">
+
+    &lt;div class="m-3">&lt;/div&gt;
+    &lt;div class="mt-3">&lt;/div&gt;
+
+</pre>
+                <h2 id="padding">Padding</h2>
+                <p>
+                    Use p-{1-5}<br>
+                    Use p{direction}-{1-5} for spacify direction , available t = top ,r = right ,b = bottom ,l = left .
+                    <br>
+                    Use np for remove padding.
+                </p>
+                <div class="row  justify-content-center">
+                    <div class="bg-secondary bg-test m-1 p-1 text-light">p-1</div>
+                </div>
+
+                <pre class="html mb-5">
+
+    &lt;div class="p-3">&lt;/div&gt;
+    &lt;div class="pr-3">&lt;/div&gt;
+
+</pre>
+                <h2 id="border">Border</h2>
+                <p>Available as below.</p>
+                <div class="row  justify-content-center">
+                    <div class="bg-secondary bg-test m-1 rounded text-light">rounded</div>
+                    <div class="bg-secondary bg-test m-1 rounded-tl text-light">rounded-tl</div>
+                    <div class="bg-secondary bg-test m-1 rounded-tr text-light">rounded-tr</div>
+                    <div class="bg-secondary bg-test m-1 rounded-bl text-light">rounded-bl</div>
+                    <div class="bg-secondary bg-test m-1 rounded-br text-light">rounded-br</div>
+                    <div class="bg-secondary bg-test m-1 circle text-light">circle</div>
+                </div>
+
+                <pre class="html mb-5">
+
+    &lt;div class="rounded">&lt;/div&gt;
+    &lt;div class="rounded-tr">&lt;/div&gt;
+    &lt;div class="rounded-bl">&lt;/div&gt;
+
+</pre>
+                <h2>Border Color</h2>
+                <p>Use bd-{color}
+                <div class="row  justify-content-center">
+                    <div class="bg-white bg-test m-1 rounded bd-primary">bd-primary</div>
+                    <div class="bg-white bg-test m-1 rounded bd-danger">bd-danger</div>
+                    <div class="bg-white bg-test m-1 rounded bd-warning">bd-warning</div>
+                </div>
+
+                <pre class="html mb-5">
+
+    &lt;div class="bd-primary">&lt;/div&gt;
+    &lt;div class="bd-danger">&lt;/div&gt;
+    &lt;div class="bd-warning">&lt;/div&gt;
+
+</pre>
+                <h2 id="shadow">Shadow</h2>
+                <p>Shadow use with shadow and -size for size ,available 3 size as below</p>
+                <div class="row justify-content-center">
+                    <div class="bg-test bg-white shadow-sm rounded m-1">shadow-sm</div>
+                    <div class="bg-test bg-white shadow rounded m-1">shadow</div>
+                    <div class="bg-test bg-white shadow-lg rounded m-1">shadow-lg</div>
+                </div>
+                <pre class="html">
+
+    &lt;div class="bg-test bg-white shadow-sm rounded m-1"&gt;shadow-sm&lt;/div&gt;
+    &lt;div class="bg-test bg-white shadow rounded m-1"&gt;shadow&lt;/div&gt;
+    &lt;div class="bg-test bg-white shadow-lg rounded m-1"&gt;shadow-lg&lt;/div&gt;
+
+</pre>
+                <h2 id="container">Container</h2>
+                <p>
+                    Container are using for limit width at 1024px and add little space between container and child
+                    element.
+                    <br>
+                    This will optimize view on big screen. <br>
+                    However you can use container-fulid that will have 100% width. <br>
+                </p>
+                <pre class="html mb-5">
+
+    &lt;div class="container">&lt;/div&gt;
+
+</pre>
+                <h2 id="button">Button</h2>
+                <p>
+                    Use btn to trigger button style and use btn-{color} for coloring. <br>
+                    Use btn-outline-{color} for outline color style. <br>
+                    Use btn-{sm,lg} for sizing. <br>
+                    btn can use with what ever element up to purposes. <br>
+                </p>
+                <div class="flex justify-content-center align-items-center">
+                    <button class="btn btn-sm btn-primary m-1">btn-sm</button>
+                    <button class="btn btn-primary m-1">btn-primary</button>
+                    <button class="btn btn-lg btn-primary m-1">btn-lg</button>
+                    <button class="btn btn-primary m-1" disabled>btn-primary disabled</button>
+                    <button class="btn btn-secondary m-1">btn-secondary</button>
+                    <button class="btn btn-primary-outline m-1">btn-primary-outline</button>
+                    <button class="btn btn-secondary-outline m-1">btn-secondary-outline</button>
+                </div>
+
+                <pre class="html mb-5">
+
+    &lt;button class="btn btn-primary"> Text &lt;/button&gt;
+
+</pre>
+                <h2 id="form">Form</h2>
+                <p>
+                    Cover form item with form-group will add space at top and bottom checkbox and radio will display
+                    inline
+                    when
+                    in it.<br>
+                </p>
+                <div class="container">
+                    <form action="" method="GET" class="form">
+                        <h2>Input</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-item" name="text1" id="text1" placeholder="form-item">
+                        </div>
+                        <pre class="html mb-5">
+
+    &lt;input type="text" class="form-item" id="text1" placeholder="form-item"&gt;
+
+</pre>
+                        <h2>Input with label</h2>
+                        <div class="form-group">
+                            <label for="" class="form-item-label">Label</label>
+                            <input type="text" class="form-item" id="text5" name="text5" placeholder="form-item">
+                        </div>
+
+                        <pre class="html mb-5">
+
+    &lt;div class="form-group">
+        &lt;label for="" class="form-item-label"> Label &lt;label&gt;
+        &lt;input type="text" class="form-item" id="text1" placeholder="form-item"&gt;
+    &lt;/div&gt;
+
+</pre>
+                        <h2>Select</h2>
+                        <div class="form-group">
+                            <select name="select" id="" class="form-select">
+                                <option selected>Open this select menu</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                        </div>
+
+                        <pre class="html mb-5">
+
+    &lt;select name="" id="" class="form-select"&gt;
+        &lt;option selected&gt;Open this select menu&lt;/option&gt;
+        &lt;option value=""&gt;Option 1&lt;/option&gt;
+        &lt;option value=""&gt;Option 2&lt;/option&gt;
+        &lt;option value=""&gt;Option 3&lt;/option&gt;
+    &lt;/select&gt;
+
+</pre>
+                        <h2>Checkbox</h2>
+                        <div class="form-group">
+                            <span class="form-check"><input type="checkbox" name="check1" id=""> Check box</span>
+                            <span class="form-check disabled"><input type="checkbox" name="check2" id=""> Check box
+                                disabled</span>
+                        </div>
+
+                        <pre class="html mb-5">
+
+    &lt;span class="form-check"&gt;&lt;input type="checkbox" name="" id=""&gt; Check box&lt;/span&gt;
+
+</pre>
+                        <h2>Radio</h2>
+                        <div class="form-group">
+                            <span class="form-radio"><input type="radio" name="radio" id="">Radio 1</span>
+                            <span class="form-radio"><input type="radio" name="radio" id="">Radio 2</span>
+                            <span class="form-radio disabled"><input type="radio" name="radio" id="">Radio 2</span>
+                        </div>
+                        <pre class="html mb-5">
+
+    &lt;span class="form-radio"&gt;&lt;input type="radio" name="" id=""&gt; Radio&lt;/span&gt;
+
+</pre>
+                        <h2>Textarea</h2>
+                        <div class="form-group">
+                            <textarea name="textarea" id="" cols="30" rows="10" class="form-textarea"
+                                placeholder="form-textarea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nobis explicabo neque obcaecati, eum mollitia delectus laboriosam sed incidunt, eius dolore voluptatem cum. Velit id corporis eligendi ipsam cumque commodi?</textarea>
+                        </div>
+                        <pre class="html mb-5">
+
+    &lt;textarea name="" id="" cols="30" rows="10" class="form-textarea"placeholder="form-textarea"&gt;&lt;/textarea&gt;
+
+</pre>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary mr-1 mb-1" value="Submit">
+                            <input type="reset" class="btn btn-secondary" value="Reset">
+                        </div>
+                        <pre class="html mb-5">
+
+    &lt;div class="form-group"&gt;
+        &lt;input type="submit" class="btn btn-primary mr-1" value="Submit"&gt;
+        &lt;input type="reset" class="btn btn-secondary" value="Reset"&gt;
+    &lt;/div&gt;
+
+</pre>
+                        <h2>Form validate</h2>
+                        Validate will trigger when input and page loaded. <br>
+                        You need custom Javascript function to add valid and invalid class to input. <br>
+                        <div class="form-group">
+                            <label for="" class="form-item-label">Correct message is "Hello"</label>
+                            <input type="text" class="form-item" placeholder="Type something"
+                                oninput="testValid(event)">
+                            <small class="form-item-invalid-message">Nah not that!</small>
+                            <small class="form-item-valid-message">Yo you're cool!</small>
+                        </div>
+                        <h4>HTML</h4>
+                        <pre class="html">
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="" class="form-item-label"&gt;Correct message is "Hello"&lt;/label&gt;
+        &lt;input type="text" class="form-item" placeholder="Type something" oninput="testValid(event)"&gt;
+        &lt;small class="form-item-invalid-message"&gt;Nah not that!&lt;/small&gt;
+        &lt;small class="form-item-valid-message"&gt;Yo you're cool!&lt;/small&gt;
+    &lt;/div&gt;
+
+</pre>
+                        <h4>Javascript sample</h4>
+                        <pre class="javascript">
+
+    //Don't forget to  clear invalid/valid
+    function testValid(ev /* event */ ){
+        if(ev.target.value == "Hello"){
+            ev.target.classList.remove('invalid')
+            ev.target.classList.add('valid')
+        }else{
+            ev.target.classList.remove('valid')
+            ev.target.classList.add('invalid')
+        }
+    }
+
+</pre>
+                    </form>
+                </div>
+                <h2 id="navbar">Navbar</h2>
+                <p>
+                    Navbar are recomended to completely structure as below then you can style it whatever you want.<br>
+                </p>
+                <div class="container">
+                    <nav class="navbar bg-primary navbar-dark">
+                        <a href="#" class="navbar-brand">Navbar</a>
+                        <button class="navbar-toggler" data-target="#navbar-col">&plus;</button>
+                        <div class="navbar-collapse" id="navbar-col">
+                            <ul>
+                                <li><a href="#" class="navbar-link active">Home</a></li>
+                                <li><a href="#" class="navbar-link">Link1</a></li>
+                                <li><a href="#" class="navbar-link">Link2</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="container">
+                    <nav class="navbar  navbar-light">
+                        <a href="#" class="navbar-brand">Navbar</a>
+                        <button class="navbar-toggler" data-target="#navbar-col2">&plus;</button>
+                        <div class="navbar-collapse" id="navbar-col2">
+                            <ul>
+                                <li><a class="navbar-link active">Home</a></li>
+                                <li><a class="navbar-link">Link1</a></li>
+                                <li><a class="navbar-link">Link2</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="container">
+                    <pre class="html mb-5">
+
+    &lt;nav class="navbar  navbar-light"&gt;
+        &lt;a href="#" class="navbar-brand"&gt;Navbar&lt;/a&gt;
+        &lt;button class="navbar-toggler" data-target="#navbar-col"&gt;&gt;&lt;/button&gt;
+        &lt;div class="navbar-collapse" id="navbar-col"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#" class="navbar-link active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="navbar-link"&gt;Link1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="navbar-link"&gt;Link2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+</pre>
+                </div>
+                <h2 id="modal">Modal</h2>
+                <p>
+                    Modal is available 3 size modal-sm, modal, modal-lg. <br>
+                    Modal has 3 animation fade bonce and slide. <br>
+                    Modal must write in structure below for use. <br>
+                    Modal with static will not close when click outside modal or press ESC <br>
+                    Modal available with tl tr bl br for position.
+                </p>
+                <h2>Trigger</h2>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
+                    Launch
+                </button>
+                <pre class="html mb-5">
+
+    &lt;button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId"&gt;Launch&lt;/button&gt;
+
+</pre>
+                <h2>Body</h2>
+                <pre class="html">
+
+    &lt;div class="modal slide" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"&gt;
+        &lt;div class="modal-dialog" role="document"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;div class="modal-header"&gt;
+                    &lt;div class="modal-title"&gt;Modal title&lt;/div&gt;
+                        &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+                            &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;div class="modal-body"&gt;
+                    Body
+                &lt;/div&gt;
+                &lt;div class="modal-footer"&gt;
+                    &lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+                    &lt;button type="button" class="btn btn-primary"&gt;Save&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+</pre>
+                <div class="modal bonce static" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title">Modal title</div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati maxime corporis
+                                    est
+                                    dolorem
+                                    laudantium voluptatum dicta non earum sint beatae et aut dolores molestias neque
+                                    vel,
+                                    eius
+                                    numquam explicabo odit!</p>
+                                <form action="" class="form">
+                                    <div class="form-group">
+                                        <label for="" class="form-item-label">Email</label>
+                                        <input type="email" name="" placeholder="Email" id="" class="form-item">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="form-item-label">Password</label>
+                                        <input type="password" name="" placeholder="Password" id="" class="form-item">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="popup">Popup</h2>
+                <p>Popup can use for alert, menu, etc can trigger with btn class or a tag. <br>
+                    If popup not show when toggle try to add "fixed" to class. <br>
+                    Add "stack" to class popup will not close other popup.
+                </p>
+                <div class="row">
+                    <div class="m-1">
+                        <button class="btn btn-primary" data-toggle="popup" data-target="#popup1">Default</button>
+                        <div class="popup point" id="popup1">
+                            <h2>Popup Default</h2>
+                        </div>
+                    </div>
+                    <div class="m-1">
+                        <button class="btn btn-primary" data-toggle="popup" data-target="#popup2">Dash right</button>
+                        <div class="popup dash-right point" id="popup2">
+                            <h2>Popup dash right</h2>
+                        </div>
+                    </div>
+                </div>
+                <pre class="html">
+
+    &lt;button class="btn btn-primary" data-toggle="popup" data-target="#popup1"&gt;Popup&lt;/button&gt;
+    &lt;div class="popup point-top" id="popup1"&gt;&lt;/div&gt;
+
+</pre>
+                <h2 id="dropdown">Dropdowns</h2>
+                <p>Dropdowns need a structure below to work properly. <br>
+                    add dropdown-link class to child will automatically close popup
+                </p>
+                <div class="m-1">
+                    <button class="btn btn-primary" data-toggle="dropdown" data-target="#dropdown1">Toggle</button>
+                    <div class="dropdown" id="dropdown1">
+                        <ul>
+                            <li><a class="dropdown-link">
+                                    <div>dropdown-link 1</div>
+                                </a></li>
+                            <li><a class="dropdown-link">
+                                    <div>dropdown-link 2</div>
+                                </a></li>
+                            <li><a>
+                                    <div>&lt;a&gt; tag Non dropdown-link</div>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <pre class="html">
+
+    &lt;button class="btn btn-primary" data-toggle="dropdown" data-target="#dropdown1"&gt;Toggle&lt;/button&gt;
+    &lt;div class="dropdown" id="dropdown1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#" class="dropdown-link"&gt;&lt;div&gt;Item 1&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="dropdown-link"&gt;&lt;div&gt;Item 2&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;&lt;div&gt;Item 3&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+</pre>
+                <h2 id="collapse">Collapes</h2>
+                <a data-toggle="collapse" data-target="#collapse">Open</a>
+                <div class="collapse" id="collapse">
+                    <p style="max-width: 300px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quod magnam
+                        soluta
+                        et blanditiis doloribus. Facilis, libero repellendus reiciendis ab perferendis expedita cumque
+                        quod
+                        temporibus accusamus ipsam. Corporis, iusto nostrum!</p>
+                </div>
+                <pre class="html">
+
+    &lt;a data-toggle="collapse" data-target="#collapse"&gt;Open&lt;/a&gt;
+    &lt;div class="collapse" id="collapse"&gt;&lt;/div&gt;
+
+</pre>
+                <h2 id="customize">Customizing</h2>
+                <p>Use scss for customizing by import minBootstrap.scss then you can overide some of variables and class
+                    style.
+                </p>
+                <h2>Basic Variables</h2>
+                <table class="container-fulid shadow-sm variables-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Unit</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center">$spacer</td>
+                        <td>Default spacer amount</td>
+                        <td class="text-center">rem</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">$rounded</td>
+                        <td>Default border rounded amount</td>
+                        <td class="text-center">rem</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">$radius</td>
+                        <td>Default border radius</td>
+                        <td class="text-center">em</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">$font-size</td>
+                        <td>Default font-size affect on many element</td>
+                        <td class="text-center">em</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">$font-family</td>
+                        <td>Default web font-family</td>
+                        <td class="text-center">Font family</td>
+                    </tr>
+                </table>
+                <h2>Colors</h2>
+                See variables.scss
+                <h2 id="bug">Bugs</h2>
+                <ul>
+                    <li>Report bugs <a href="https://github.com/pwnrrk/minbootstrap/issues">here</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center bg-dark text-light p-1">
+        <h5>Contributor <a href="https://pwnrrk.github.io">R.Phuwanat</a> THAILAND</h5>
+        <h5>Code licensed by <a href="https://github.com/pwnrrk/minbootstrap/blob/master/LICENSE">MIT</a></h5>
+    </footer>
+</body>
+<script src="./minbootstrap/js/minBootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>
+    document.querySelectorAll('pre').forEach(block => {
+        hljs.highlightBlock(block);
+    });
+</script>
+<script>
+    function testValid(ev) {
+        if (ev.target.value == "Hello") {
+            ev.target.classList.remove('invalid')
+            ev.target.classList.add('valid')
+        } else {
+            ev.target.classList.remove('valid')
+            ev.target.classList.add('invalid')
+        }
+    }
+</script>
+
+</html>
