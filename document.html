@@ -18,9 +18,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./ico/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="./ico/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="./ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark.min.css">
     <style>
@@ -64,6 +64,62 @@
             border: 1px solid #dddddd;
             padding: 1rem;
         }
+        .navbar{
+            position: fixed;
+            z-index: 3;
+        }
+        .side-menu{
+            position: fixed;
+            top: 0;
+            z-index: 4;
+            height: 100%;
+            width: 100%;
+            transform: translateX(-100%);
+            transition: transform .25s ease;
+        }.side-menu.showing{
+            transform: translateX(0);
+        }
+        .side-menu-inner{
+            position: absolute;
+            width: fit-content;
+            height: 100%;
+            top: 0;
+        }
+        .side-menu-bg{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            width: auto;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .content h2{
+                padding-top: 3em;
+        }
+        .bg-light h2{
+            padding-top: 0;
+        }
+        @media (min-width: 540px) {
+            .content{
+                padding-left: 200px;
+            }
+            .content h2{
+                padding-top: 0;
+        }
+            .side-menu{
+                z-index: 1;
+                transform: none;
+            }
+            .side-menu-bg{
+                display: none;
+            }
+            .side-menu-toggler{
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -74,7 +130,7 @@
                 data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
                 data-fa-i2svg="" style="width: 100%;">
                 <path fill="currentColor"
-                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16h26C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16h26c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16h26c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
                 </path>
             </svg>
         </button>
@@ -82,14 +138,16 @@
             <ul>
                 <li><a href="./" class="navbar-link">Home</a></li>
                 <li><a href="./document.html" class="navbar-link active">Document</a></li>
+                <li><a class="side-menu-toggler navbar-link">Table Of Content</a></li>
             </ul>
         </div>
     </nav>
-    <div class="row nm">
-        <div style="width: auto;">
-            <div class="bg-light">
-                <div class="pt-1 pl-1 pr-5" style="height: 100%;">
-                    <div class="side-menu" style="line-height: 30px;">
+    <div>
+        <div class="side-menu">
+            <div class="side-menu-bg"></div>
+            <div class="bg-light side-menu-inner">
+                <div class="pl-1 pr-5" style="height: 100%;">
+                    <div style="line-height: 30px;">
                         <h2>Content</h2>
                         <ul style="list-style:none;" class="np">
                             <li>
@@ -101,8 +159,8 @@
                                     </svg> Basic</a>
                                 <div class="collapse" id="basic">
                                     <ul style="list-style: none;" class="pl-1">
-                                        <li><a href="#text" class="text-dark">Text</a></li>
-                                        <li><a href="#layout" class="text-dark">Layout</a></li>
+                                        <li><a href="#text" class="text-dark side-menu-link">Text</a></li>
+                                        <li><a href="#layout" class="text-dark side-menu-link">Layout</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -115,11 +173,11 @@
                                     </svg> Utility</a>
                                 <div class="collapse" id="utility">
                                     <ul style="list-style: none;" class="pl-1">
-                                        <li><a href="#background" class="text-dark">Background</a></li>
-                                        <li><a href="#margin" class="text-dark">Margin</a></li>
-                                        <li><a href="#padding" class="text-dark">Padding</a></li>
-                                        <li><a href="#border" class="text-dark">Border</a></li>
-                                        <li><a href="#shadow" class="text-dark">Shadow</a></li>
+                                        <li><a href="#background" class="text-dark side-menu-link">Background</a></li>
+                                        <li><a href="#margin" class="text-dark side-menu-link">Margin</a></li>
+                                        <li><a href="#padding" class="text-dark side-menu-link">Padding</a></li>
+                                        <li><a href="#border" class="text-dark side-menu-link">Border</a></li>
+                                        <li><a href="#shadow" class="text-dark side-menu-link">Shadow</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -132,14 +190,14 @@
                                     </svg> Component</a>
                                 <div class="collapse" id="component">
                                     <ul style="list-style: none;" class="pl-1">
-                                        <li><a href="#container" class="text-dark">Container</a></li>
-                                        <li><a href="#button" class="text-dark">Buttons</a></li>
-                                        <li><a href="#form" class="text-dark">Form</a></li>
-                                        <li><a href="#navbar" class="text-dark">Navigation Bar</a></li>
-                                        <li><a href="#modal" class="text-dark">Modal</a></li>
-                                        <li><a href="#popup" class="text-dark">Popup</a></li>
-                                        <li><a href="#dropdown" class="text-dark">Dropdown</a></li>
-                                        <li><a href="#collapse" class="text-dark">Collapse</a></li>
+                                        <li><a href="#container" class="text-dark side-menu-link">Container</a></li>
+                                        <li><a href="#button" class="text-dark side-menu-link">Buttons</a></li>
+                                        <li><a href="#form" class="text-dark side-menu-link">Form</a></li>
+                                        <li><a href="#navbar" class="text-dark side-menu-link">Navigation Bar</a></li>
+                                        <li><a href="#modal" class="text-dark side-menu-link">Modal</a></li>
+                                        <li><a href="#popup" class="text-dark side-menu-link">Popup</a></li>
+                                        <li><a href="#dropdown" class="text-dark side-menu-link">Dropdown</a></li>
+                                        <li><a href="#collapse" class="text-dark side-menu-link">Collapse</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -152,8 +210,8 @@
                                     </svg> Other</a>
                                 <div class="collapse" id="other">
                                     <ul style="list-style: none;" class="pl-1">
-                                        <li><a href="#customize" class="text-dark">Customizing</a></li>
-                                        <li><a href="#bug" class="text-dark">Bugs</a></li>
+                                        <li><a href="#customize" class="text-dark side-menu-link">Customizing</a></li>
+                                        <li><a href="#bug" class="text-dark side-menu-link">Bugs</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -162,7 +220,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="pt-5 content">
             <div class="p-2">
                 <h2 id="text">Text</h2>
                 <p>
@@ -172,10 +230,10 @@
                     <h4>
                         The h tag will reduced font weight to 500.
                     </h4>
-                    <div class="bg-light">
-                        <h2>Heading</h2>
+                    <div class="bg-light p-1">
                         <h2>Heading</h2>
                         <h3>Heading</h3>
+                        <h4>Heading</h4>
                     </div>
                     <h4>Text color</h4>
                     <p>Add text-{color} class to custom text color</p>
@@ -794,6 +852,23 @@
             ev.target.classList.add('invalid')
         }
     }
+    function sideMenuToggle(){
+        document.querySelectorAll('.side-menu').forEach(e=>{
+            e.classList.contains('showing')? e.classList.remove('showing'):e.classList.add('showing')
+        })
+    }
+    document.querySelectorAll('.side-menu-toggler,.side-menu-bg,.side-menu-link').forEach(e=>{
+        e.addEventListener('click',sideMenuToggle)
+    })
+    document.querySelectorAll('.side-menu-link').forEach(e=>{
+        e.addEventListener('click',()=>{
+            if(window.innerWidth<540){
+                document.querySelectorAll('.navbar-toggler').forEach(es=>{
+                    es.click()
+                })
+            }
+        })
+    })
 </script>
 
 </html>
