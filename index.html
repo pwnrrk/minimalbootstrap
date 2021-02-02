@@ -64,7 +64,8 @@
             border: 1px solid #dddddd;
             padding: 1rem;
         }
-        .navbar{
+
+        .navbar {
             position: fixed;
         }
     </style>
@@ -102,7 +103,8 @@
                         <h2>Create responsive website with a simple grid system, customizable Sass, and light weight of
                             simple Javascript plugin.</h2>
                         <div>
-                            <a href="./document.html" class="btn btn-primary btn-lg">Get Started</a> <a class="btn btn-secondary-outline btn-lg" href="#install">Install</a>
+                            <a href="./document.html" class="btn btn-primary btn-lg">Get Started</a> <a
+                                class="btn btn-secondary-outline btn-lg" href="#install">Install</a>
                         </div>
                     </div>
                 </div>
@@ -136,11 +138,13 @@
 </body>
 <script src="./minbootstrap/js/minBootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
     document.querySelectorAll('pre').forEach(block => {
         hljs.highlightBlock(block);
     });
 </script>
+
 <script>
     function testValid(ev) {
         if (ev.target.value == "Hello") {
@@ -159,6 +163,8 @@
                 document.getElementById('version').innerText = res[0].tag_name
                 document.getElementById('release-title').innerText = res[0].name
                 document.getElementById('release-body').innerText = res[0].body
+                document.getElementById('release-body').innerHTML =
+                    marked(document.getElementById('release-body').innerText)
             }
         }
         xmlhttp.open('GET', 'https://api.github.com/repos/pwnrrk/minbootstrap/releases')
