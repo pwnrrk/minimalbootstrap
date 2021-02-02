@@ -64,11 +64,13 @@
             border: 1px solid #dddddd;
             padding: 1rem;
         }
-        .navbar{
+
+        .navbar {
             position: fixed;
             z-index: 3;
         }
-        .side-menu{
+
+        .side-menu {
             position: fixed;
             top: 0;
             z-index: 4;
@@ -76,16 +78,20 @@
             width: 100%;
             transform: translateX(-100%);
             transition: transform .25s ease;
-        }.side-menu.showing{
+        }
+
+        .side-menu.showing {
             transform: translateX(0);
         }
-        .side-menu-inner{
+
+        .side-menu-inner {
             position: absolute;
             width: fit-content;
             height: 100%;
             top: 0;
         }
-        .side-menu-bg{
+
+        .side-menu-bg {
             position: absolute;
             top: 0;
             right: 0;
@@ -96,25 +102,31 @@
             height: auto;
             background-color: rgba(0, 0, 0, 0.5);
         }
-        .content h2{
-                padding-top: 3em;
+
+        .content h2 {
+            padding-top: 3em;
         }
-        .bg-light h2{
+
+        .bg-light h2 {
             padding-top: 0;
         }
+
         @media (min-width: 540px) {
-            .content{
+            .content {
                 padding-left: 200px;
             }
-            .side-menu{
+
+            .side-menu {
                 z-index: 1;
                 width: auto;
                 transform: none;
             }
-            .side-menu-bg{
+
+            .side-menu-bg {
                 display: none;
             }
-            .side-menu-toggler{
+
+            .side-menu-toggler {
                 display: none;
             }
         }
@@ -158,6 +170,7 @@
                                 <div class="collapse" id="basic">
                                     <ul style="list-style: none;" class="pl-1">
                                         <li><a href="#text" class="text-dark side-menu-link">Text</a></li>
+                                        <li><a href="#sizing" class="text-dark side-menu-link">Sizing</a></li>
                                         <li><a href="#layout" class="text-dark side-menu-link">Layout</a></li>
                                     </ul>
                                 </div>
@@ -221,32 +234,111 @@
         <div class="pt-5 content">
             <div class="p-2">
                 <h2 id="text">Text</h2>
-                <p>
-                    We support some text class with color, align, weight
-                </p>
+                <h4>Color</h4>
+                <p>text-{color}</p>
+                <div class="shadow p-1 m-auto max-w-sm rounded">
+                    <span class="text-blue">Blue</span><br>
+                    <span class="text-indigo">Indigo</span><br>
+                    <span class="text-purple">Purple</span><br>
+                    <span class="text-muted">Muted</span><br>
+                    and more.
+                </div>
                 <div>
-                    <h4>
-                        The h tag will reduced font weight to 500.
-                    </h4>
-                    <div class="bg-light p-1">
-                        <h2>Heading</h2>
-                        <h3>Heading</h3>
-                        <h4>Heading</h4>
-                    </div>
-                    <h4>Text color</h4>
-                    <p>Add text-{color} class to custom text color</p>
-                    <div><span class="text-red">text-red</span> <span class="text-primary">text-primary</span></div>
-                    <h4>
-                        Link
-                    </h4>
-                    <div><a href="#">Link default</a> <a href="#" class="text-red">Link with custom color</a></div>
-                    <h4>Font Weight</h4>
-                    <p>Add font-{weight} class to custom font weight.</p>
+                    <pre class="html mb-5 rounded">
+
+    &lt;span class="text-blue"&gt;text&lt;span&gt;
+    &lt;span class="text-purple"&gt;text&lt;span&gt;
+    &lt;span class="text-indigo"&gt;text&lt;span&gt;
+    &lt;span class="text-muted"&gt;text&lt;span&gt;
+
+</pre>
+                </div>
+                <h4>Align</h4>
+                <p>text-{position}</p>
+                <div class="max-w-md m-auto shadow rounded p-1">
+                    <div class="text-left">Left</div>
+                    <div class="text-center">Center</div>
+                    <div class="text-right">Right</div>
+                </div>
+                <pre class="html mb-5 rounded">
+
+    &lt;div class="text-left"&gt;Left&lt;div&gt;
+    &lt;div class="text-center"&gt;Center&lt;div&gt;
+    &lt;div class="text-right"&gt;Right&lt;div&gt;
+                
+</pre>
+                <h4>Font Weight</h4>
+                <p>font-{weight},fw-{weight}</p>
+                <div class="p-1 rounded shadow max-w-sm m-auto">
+                    <span class="font-400">400</span><br>
+                    <span class="font-600">600</span><br>
+                </div>
+                <pre class="html mb-5 rounded">
+
+    &lt;span class="font-400"&gt;400&lt;span&gt;
+    &lt;span class="font-600"&gt;600&lt;span&gt;
+                                
+</pre>
+                <h2>Sizing</h2>
+                <p>
+                    Sizing system with basic size class. w for width. h for height. Use with w-{size},h-{size}.
+                    The size is start at 8px and inscrese by 8 to 120px, w-auto,h-auto is like the width:100%; heigth:100%; in CSS.
+                </p>
+                <div class="flex">
+                    <div class="w-64 h-64 shadow rounded m-1"></div>
+                    <div class="w-120 h-120 shadow rounded"></div>
+                    <div class="w-auto m-1 h-120 shadow rounded"></div>
+                </div>
+                <pre class="html rounded mb-5">
+
+    &lt;div class="w-64 h-64"&gt;&lt;div&gt; 
+    &lt;div class="w-120 h-120"&gt;&lt;div&gt; 
+    &lt;div class="w-auto h-120"&gt;&lt;div&gt; 
+
+</pre>
+                <p>
+                    Set max width and height with max-w-{size},max-h-{size}. Available size is sm, md and lg, scroll
+                    will make content scrollable and overflow-hide will hidden overflow.
+                </p>
+                <div class="max-w-sm p-5 shadow rounded m-auto"></div>
+                <div class="max-w-sm max-h-sm shadow rounded p-1 mt-1 scroll m-auto">
                     <div>
-                        <h3 class="font-600">font-600</h3>
-                        <h3 class="font-400">font-400</h3>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab facere ipsum eveniet suscipit
+                            porro
+                            pariatur esse ullam reiciendis temporibus optio fuga in, aspernatur placeat dolores
+                            dignissimos
+                            quos, rerum provident voluptatibus!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab facere ipsum eveniet suscipit
+                            porro
+                            pariatur esse ullam reiciendis temporibus optio fuga in, aspernatur placeat dolores
+                            dignissimos
+                            quos, rerum provident voluptatibus!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab facere ipsum eveniet suscipit
+                            porro
+                            pariatur esse ullam reiciendis temporibus optio fuga in, aspernatur placeat dolores
+                            dignissimos
+                            quos, rerum provident voluptatibus!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab facere ipsum eveniet suscipit
+                            porro
+                            pariatur esse ullam reiciendis temporibus optio fuga in, aspernatur placeat dolores
+                            dignissimos
+                            quos, rerum provident voluptatibus!
+                        </p>
                     </div>
                 </div>
+                <pre class="html rounded mb-5">
+
+    &lt;div class="max-w-sm"&gt;&lt;div&gt; 
+    &lt;div class="max-h-sm"&gt;&lt;div&gt; 
+                
+</pre>
                 <h2 id="layout">Row</h2>
                 <p>Use row for trigger flex style then use col as child for grid system col-{1-12} for sizing<br>
                     If col-{number} summary with other in parent row are over 12 it will move to next line. <br>
@@ -258,7 +350,7 @@
                     <div class="col col-test bd-gray">col</div>
                     <div class="col col-test bd-gray">col</div>
                 </div>
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="row"&gt;
         &lt;div class="col">col&lt;/div&gt;
@@ -269,17 +361,13 @@
 </pre>
                 <h2>Flex</h2>
                 <p>If you just need inline display use flex instead and still can use col for sizing</p>
-                <p>
-                    Use align-item-{position} on row or align-self-{position} on child<br>
-                    Available position: start, center, end.
-                </p>
                 <h2>Vertical align</h2>
-                <div class="row  align-items-center" style="height: 200px;">
-                    <div class="col col-test bd-gray">col</div>
-                    <div class="col col-test bd-gray">col</div>
-                    <div class="col col-test bd-gray">col</div>
+                <div class="row  align-items-center bg-light" style="height: 200px;">
+                    <div class="col bg-white col-test bd-gray">col</div>
+                    <div class="col bg-white col-test bd-gray">col</div>
+                    <div class="col bg-white col-test bd-gray">col</div>
                 </div>
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="row align-items-center"&gt;
         &lt;div class="col"> col &lt;/div&gt;
@@ -293,25 +381,25 @@
                     Use justify-content-{position} on row<br>
                     Available position: start, center, end, around, even and between.
                 </p>
-                <div class="" style="width: 100%;">
+                <div class="bg-light p-1" style="width: 100%;">
                     <div class="row  pb-1 justify-content-center">
-                        <div class="col-3 col-test bd-gray">col-3</div>
-                        <div class="col-3 col-test bd-gray">col-3</div>
-                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
                     </div>
                     <div class="row  pb-1 justify-content-start">
-                        <div class="col-3 col-test bd-gray">col-3</div>
-                        <div class="col-3 col-test bd-gray">col-3</div>
-                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
                     </div>
                     <div class="row  justify-content-end">
-                        <div class="col-3 col-test bd-gray">col-3</div>
-                        <div class="col-3 col-test bd-gray">col-3</div>
-                        <div class="col-3 col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
+                        <div class="col-3 bg-white col-test bd-gray">col-3</div>
                     </div>
                 </div>
 
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="row justify-content-center"&gt;
         &lt;div class="col-3"> col &lt;/div&gt;
@@ -322,7 +410,7 @@
 </pre>
                 <h2 id="background">Background</h2>
                 <p>
-                    Use bg-{color}<br>
+                    bg-{color}
                 </p>
                 <div class="row justify-content-center">
                     <div class="bg-primary bg-test text-white m-1">bg-primary</div>
@@ -330,7 +418,7 @@
                     <div class="bg-dark bg-test text-white m-1">bg-dark</div>
                 </div>
 
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="bg-primary">&lt;/div&gt;
 
@@ -340,13 +428,12 @@
                     Use m-{1-5}<br>
                     Use m{direction}-{1-5} for spacify direction , available t = top ,r = right ,b = bottom ,l = left .
                     <br>
-                    Use nm for remove margin.
+                    Use nm or m-0 for remove margin.
                 </p>
                 <div class="row  justify-content-center">
                     <div class="bg-secondary bg-test m-1 text-light">m-1</div>
                 </div>
-
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="m-3">&lt;/div&gt;
     &lt;div class="mt-3">&lt;/div&gt;
@@ -357,13 +444,15 @@
                     Use p-{1-5}<br>
                     Use p{direction}-{1-5} for spacify direction , available t = top ,r = right ,b = bottom ,l = left .
                     <br>
-                    Use np for remove padding.
+                    Use np or p-0 for remove padding.
                 </p>
                 <div class="row  justify-content-center">
-                    <div class="bg-secondary bg-test m-1 p-1 text-light">p-1</div>
+                    <div class="bg-secondary bg-test m-1 p-1 text-light">
+                        <div class="w-auto h-auto bg-light"></div>
+                    </div>
                 </div>
 
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="p-3">&lt;/div&gt;
     &lt;div class="pr-3">&lt;/div&gt;
@@ -380,7 +469,7 @@
                     <div class="bg-secondary bg-test m-1 circle text-light">circle</div>
                 </div>
 
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="rounded">&lt;/div&gt;
     &lt;div class="rounded-tr">&lt;/div&gt;
@@ -395,21 +484,36 @@
                     <div class="bg-white bg-test m-1 rounded bd-warning">bd-warning</div>
                 </div>
 
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;div class="bd-primary">&lt;/div&gt;
     &lt;div class="bd-danger">&lt;/div&gt;
     &lt;div class="bd-warning">&lt;/div&gt;
 
 </pre>
+                <h2>Border width</h2>
+                <p>Use bd-{width}
+                <div class="row  justify-content-center">
+                    <div class="bg-white bg-test m-1 rounded bd-primary bd-1">bd-1</div>
+                    <div class="bg-white bg-test m-1 rounded bd-primary bd-2">bd-2</div>
+                    <div class="bg-white bg-test m-1 rounded bd-primary bd-3">bd-3</div>
+                </div>
+
+                <pre class="html rounded mb-5">
+
+    &lt;div class="bd-1">&lt;/div&gt;
+    &lt;div class="bd-2">&lt;/div&gt;
+    &lt;div class="bd-3">&lt;/div&gt;
+
+</pre>
                 <h2 id="shadow">Shadow</h2>
-                <p>Shadow use with shadow and -size for size ,available 3 size as below</p>
+                <p>Use shadow or shadow-{size} </p>
                 <div class="row justify-content-center">
                     <div class="bg-test bg-white shadow-sm rounded m-1">shadow-sm</div>
                     <div class="bg-test bg-white shadow rounded m-1">shadow</div>
                     <div class="bg-test bg-white shadow-lg rounded m-1">shadow-lg</div>
                 </div>
-                <pre class="html">
+                <pre class="html rounded">
 
     &lt;div class="bg-test bg-white shadow-sm rounded m-1"&gt;shadow-sm&lt;/div&gt;
     &lt;div class="bg-test bg-white shadow rounded m-1"&gt;shadow&lt;/div&gt;
@@ -421,10 +525,15 @@
                     Container are using for limit width at 1024px and add little space between container and child
                     element.
                     <br>
-                    This will optimize view on big screen. <br>
-                    However you can use container-fulid that will have 100% width. <br>
+                    You can use container-fulid that will have 100% width. <br>
                 </p>
-                <pre class="html mb-5">
+                <div class="shadow container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        pariatur cumque? Iste doloribus iusto minima dolore, labore nihil placeat corporis earum
+                        delectus
+                        repellendus rerum sequi consequatur asperiores neque, officia blanditiis.</p>
+                </div>
+                <pre class="html rounded mb-5">
 
     &lt;div class="container">&lt;/div&gt;
 
@@ -446,7 +555,7 @@
                     <button class="btn btn-secondary-outline m-1">btn-secondary-outline</button>
                 </div>
 
-                <pre class="html mb-5">
+                <pre class="html rounded mb-5">
 
     &lt;button class="btn btn-primary"> Text &lt;/button&gt;
 
@@ -460,22 +569,22 @@
                 </p>
                 <div class="container">
                     <form action="" method="GET" class="form">
-                        <h2>Input</h2>
+                        <h3>Input</h3>
                         <div class="form-group">
                             <input type="text" class="form-item" name="text1" id="text1" placeholder="form-item">
                         </div>
-                        <pre class="html mb-5">
+                        <pre class="html rounded mb-5">
 
     &lt;input type="text" class="form-item" id="text1" placeholder="form-item"&gt;
 
 </pre>
-                        <h2>Input with label</h2>
+                        <h3>Input with label</h3>
                         <div class="form-group">
                             <label for="" class="form-item-label">Label</label>
                             <input type="text" class="form-item" id="text5" name="text5" placeholder="form-item">
                         </div>
 
-                        <pre class="html mb-5">
+                        <pre class="html rounded mb-5">
 
     &lt;div class="form-group">
         &lt;label for="" class="form-item-label"> Label &lt;label&gt;
@@ -483,7 +592,7 @@
     &lt;/div&gt;
 
 </pre>
-                        <h2>Select</h2>
+                        <h3>Select</h3>
                         <div class="form-group">
                             <select name="select" id="" class="form-select">
                                 <option selected>Open this select menu</option>
@@ -493,7 +602,7 @@
                             </select>
                         </div>
 
-                        <pre class="html mb-5">
+                        <pre class="html rounded mb-5">
 
     &lt;select name="" id="" class="form-select"&gt;
         &lt;option selected&gt;Open this select menu&lt;/option&gt;
@@ -503,35 +612,35 @@
     &lt;/select&gt;
 
 </pre>
-                        <h2>Checkbox</h2>
+                        <h3>Checkbox</h3>
                         <div class="form-group">
                             <span class="form-check"><input type="checkbox" name="check1" id=""> Check box</span>
                             <span class="form-check disabled"><input type="checkbox" name="check2" id=""> Check box
                                 disabled</span>
                         </div>
 
-                        <pre class="html mb-5">
+                        <pre class="html rounded mb-5">
 
     &lt;span class="form-check"&gt;&lt;input type="checkbox" name="" id=""&gt; Check box&lt;/span&gt;
 
 </pre>
-                        <h2>Radio</h2>
+                        <h3>Radio</h3>
                         <div class="form-group">
                             <span class="form-radio"><input type="radio" name="radio" id="">Radio 1</span>
                             <span class="form-radio"><input type="radio" name="radio" id="">Radio 2</span>
                             <span class="form-radio disabled"><input type="radio" name="radio" id="">Radio 2</span>
                         </div>
-                        <pre class="html mb-5">
+                        <pre class="html rounded mb-5">
 
     &lt;span class="form-radio"&gt;&lt;input type="radio" name="" id=""&gt; Radio&lt;/span&gt;
 
 </pre>
-                        <h2>Textarea</h2>
+                        <h3>Textarea</h3>
                         <div class="form-group">
                             <textarea name="textarea" id="" cols="30" rows="10" class="form-textarea"
                                 placeholder="form-textarea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nobis explicabo neque obcaecati, eum mollitia delectus laboriosam sed incidunt, eius dolore voluptatem cum. Velit id corporis eligendi ipsam cumque commodi?</textarea>
                         </div>
-                        <pre class="html mb-5">
+                        <pre class="html rounded mb-5">
 
     &lt;textarea name="" id="" cols="30" rows="10" class="form-textarea"placeholder="form-textarea"&gt;&lt;/textarea&gt;
 
@@ -540,7 +649,7 @@
                             <input type="submit" class="btn btn-primary mr-1 mb-1" value="Submit">
                             <input type="reset" class="btn btn-secondary" value="Reset">
                         </div>
-                        <pre class="html mb-5">
+                        <pre class="html rounded mb-5">
 
     &lt;div class="form-group"&gt;
         &lt;input type="submit" class="btn btn-primary mr-1" value="Submit"&gt;
@@ -559,7 +668,7 @@
                             <small class="form-item-valid-message">Yo you're cool!</small>
                         </div>
                         <h4>HTML</h4>
-                        <pre class="html">
+                        <pre class="html rounded">
 
     &lt;div class="form-group"&gt;
         &lt;label for="" class="form-item-label"&gt;Correct message is "Hello"&lt;/label&gt;
@@ -570,7 +679,7 @@
 
 </pre>
                         <h4>Javascript sample</h4>
-                        <pre class="javascript">
+                        <pre class="javascript rounded">
 
     //Don't forget to  clear invalid/valid
     function testValid(ev /* event */ ){
@@ -587,14 +696,11 @@
                     </form>
                 </div>
                 <h2 id="navbar">Navbar</h2>
-                <p>
-                    Navbar are recomended to completely structure as below then you can style it whatever you want.<br>
-                </p>
                 <div class="container">
                     <nav class="navbar bg-primary navbar-dark">
                         <a href="#" class="navbar-brand">Navbar</a>
                         <button class="navbar-toggler" data-target="#navbar-col">&plus;</button>
-                        <div class="navbar-collapse" id="navbar-col">
+                        <div class="navbar-collapse" id="navbar-col1">
                             <ul>
                                 <li><a href="#" class="navbar-link active">Home</a></li>
                                 <li><a href="#" class="navbar-link">Link1</a></li>
@@ -617,7 +723,7 @@
                     </nav>
                 </div>
                 <div class="container">
-                    <pre class="html mb-5">
+                    <pre class="html rounded mb-5">
 
     &lt;nav class="navbar  navbar-light"&gt;
         &lt;a href="#" class="navbar-brand"&gt;Navbar&lt;/a&gt;
@@ -637,21 +743,20 @@
                 <p>
                     Modal is available 3 size modal-sm, modal, modal-lg. <br>
                     Modal has 3 animation fade bonce and slide. <br>
-                    Modal must write in structure below for use. <br>
                     Modal with static will not close when click outside modal or press ESC <br>
                     Modal available with tl tr bl br for position.
                 </p>
-                <h2>Trigger</h2>
+                <h3>Trigger</h3>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
                     Launch
                 </button>
-                <pre class="html mb-5">
+                <pre class="html rounded">
 
     &lt;button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId"&gt;Launch&lt;/button&gt;
 
 </pre>
-                <h2>Body</h2>
-                <pre class="html">
+                <h3>Body</h3>
+                <pre class="html rounded">
 
     &lt;div class="modal slide" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"&gt;
         &lt;div class="modal-dialog" role="document"&gt;
@@ -711,8 +816,7 @@
                     </div>
                 </div>
                 <h2 id="popup">Popup</h2>
-                <p>Popup can use for alert, menu, etc can trigger with btn class or a tag. <br>
-                    If popup not show when toggle try to add "fixed" to class. <br>
+                <p>
                     Add "stack" to class popup will not close other popup.
                 </p>
                 <div class="row">
@@ -729,14 +833,14 @@
                         </div>
                     </div>
                 </div>
-                <pre class="html">
+                <pre class="html rounded">
 
     &lt;button class="btn btn-primary" data-toggle="popup" data-target="#popup1"&gt;Popup&lt;/button&gt;
     &lt;div class="popup point-top" id="popup1"&gt;&lt;/div&gt;
 
 </pre>
                 <h2 id="dropdown">Dropdowns</h2>
-                <p>Dropdowns need a structure below to work properly. <br>
+                <p>
                     add dropdown-link class to child will automatically close popup
                 </p>
                 <div class="m-1">
@@ -755,7 +859,7 @@
                         </ul>
                     </div>
                 </div>
-                <pre class="html">
+                <pre class="html rounded">
 
     &lt;button class="btn btn-primary" data-toggle="dropdown" data-target="#dropdown1"&gt;Toggle&lt;/button&gt;
     &lt;div class="dropdown" id="dropdown1"&gt;
@@ -776,7 +880,7 @@
                         quod
                         temporibus accusamus ipsam. Corporis, iusto nostrum!</p>
                 </div>
-                <pre class="html">
+                <pre class="html rounded">
 
     &lt;a data-toggle="collapse" data-target="#collapse"&gt;Open&lt;/a&gt;
     &lt;div class="collapse" id="collapse"&gt;&lt;/div&gt;
@@ -819,8 +923,6 @@
                         <td class="text-center">Font family</td>
                     </tr>
                 </table>
-                <h2>Colors</h2>
-                See variables.scss
                 <h2 id="bug">Bugs</h2>
                 <ul>
                     <li>Report bugs <a href="https://github.com/pwnrrk/minbootstrap/issues">here</a></li>
@@ -828,7 +930,7 @@
             </div>
         </div>
     </div>
-    <footer class="text-center bg-dark text-light p-1">
+    <footer class="text-center text-dark p-1">
         <h5>Contributor <a href="https://pwnrrk.github.io">R.Phuwanat</a> THAILAND</h5>
         <h5>Code licensed by <a href="https://github.com/pwnrrk/minbootstrap/blob/master/LICENSE">MIT</a></h5>
     </footer>
@@ -850,18 +952,18 @@
             ev.target.classList.add('invalid')
         }
     }
-    function sideMenuToggle(){
-        document.querySelectorAll('.side-menu').forEach(e=>{
-            e.classList.contains('showing')? e.classList.remove('showing'):e.classList.add('showing')
+    function sideMenuToggle() {
+        document.querySelectorAll('.side-menu').forEach(e => {
+            e.classList.contains('showing') ? e.classList.remove('showing') : e.classList.add('showing')
         })
     }
-    document.querySelectorAll('.side-menu-toggler,.side-menu-bg,.side-menu-link').forEach(e=>{
-        e.addEventListener('click',sideMenuToggle)
+    document.querySelectorAll('.side-menu-toggler,.side-menu-bg,.side-menu-link').forEach(e => {
+        e.addEventListener('click', sideMenuToggle)
     })
-    document.querySelectorAll('.side-menu-link').forEach(e=>{
-        e.addEventListener('click',()=>{
-            if(window.innerWidth<540){
-                document.querySelectorAll('.navbar-toggler').forEach(es=>{
+    document.querySelectorAll('.side-menu-link').forEach(e => {
+        e.addEventListener('click', () => {
+            if (window.innerWidth < 540) {
+                document.querySelectorAll('.navbar-toggler').forEach(es => {
                     es.click()
                 })
             }
