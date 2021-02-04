@@ -282,18 +282,18 @@
                 <h2 id="sizing">Sizing</h2>
                 <p>
                     Sizing system with basic size class. w for width. h for height. Use with w-{size},h-{size}.
-                    The size is start at 8px and inscrese by 8 to 120px, w-auto,h-auto is like the width:100%; heigth:100%; in CSS.
+                    The size is available 1 - 64, w-auto,h-auto is like the width:100%; heigth:100%; in CSS.
                 </p>
                 <div class="flex">
-                    <div class="w-64 h-64 shadow rounded m-1"></div>
-                    <div class="w-120 h-120 shadow rounded"></div>
-                    <div class="w-auto m-1 h-120 shadow rounded"></div>
+                    <div class="w-64 h-64 shadow flex align-items-center justify-content-center rounded m-1"> w-64 h-64 </div>
+                    <div class="w-32 h-32 shadow rounded flex align-items-center justify-content-center m-1"> w-32 h-32</div>
+                    <div class="w-auto m-1 h-20 shadow rounded flex align-items-center justify-content-center">w-auto h-20</div>
                 </div>
                 <pre class="html rounded mb-5">
 
     &lt;div class="w-64 h-64"&gt;&lt;div&gt; 
-    &lt;div class="w-120 h-120"&gt;&lt;div&gt; 
-    &lt;div class="w-auto h-120"&gt;&lt;div&gt; 
+    &lt;div class="w-32 h-32"&gt;&lt;div&gt; 
+    &lt;div class="w-auto h-20"&gt;&lt;div&gt; 
 
 </pre>
                 <p>
