@@ -169,6 +169,7 @@
                                     </svg> Basic</a>
                                 <div class="collapse" id="basic">
                                     <ul style="list-style: none;" class="pl-1">
+                                        <li><a href="#installation" class="text-dark side-menu-link">Installation</a></li>
                                         <li><a href="#text" class="text-dark side-menu-link">Text</a></li>
                                         <li><a href="#sizing" class="text-dark side-menu-link">Sizing</a></li>
                                         <li><a href="#position" class="text-dark side-menu-link">Position</a></li>
@@ -235,6 +236,38 @@
         </div>
         <div class="pt-5 content">
             <div class="p-2">
+                <h2 id="installation">Installation And Import</h2>
+                <p>CSS</p>
+                <pre class="html rounded">
+
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/@r.phuwanat/minbootstrap/css/minBootstrap.css&quot;&gt;
+    &lt;!-- Or minified version --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/@r.phuwanat/minbootstrap/css/minBootstrap.min.css&quot;&gt;
+
+</pre>
+                <p>SCSS</p>
+                <pre class="scss rounded">
+
+    @import "node_modules/@r.phuwanat/minbootstrap/scss/minBootstrap.scss";
+
+</pre>
+                <p>Javascript for initial</p>
+                <pre class="html rounded">
+
+    &lt;script src="node_modules/@r.phuwanat/minbootstap/js/minBootstrap.js"&gt;&lt;/script&gt;
+    &lt;!-- Or minified version --&gt;
+    &lt;script src="node_modules/@r.phuwanat/minbootstap/js/minBootstrap.min.js"&gt;&lt;/script&gt;
+
+</pre>
+                <p>If you use framework such as Meteor you can use</p>
+                <pre class="js rounded">
+    // For initial.
+    import "@r.phuwanat/minbootstap/js/minBootstrap";
+    // We have extract some utility function.
+    import { MinB } from "@r.phuwanat/minbootstap/js/minBootstrapBundle";
+    // The require('@r.phuwanat/minbootstap') is not available yet.
+
+</pre>
                 <h2 id="text">Text</h2>
                 <h4>Color</h4>
                 <p>text-{color}</p>
