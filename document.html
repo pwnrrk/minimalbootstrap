@@ -171,7 +171,9 @@
                                     <ul style="list-style: none;" class="pl-1">
                                         <li><a href="#text" class="text-dark side-menu-link">Text</a></li>
                                         <li><a href="#sizing" class="text-dark side-menu-link">Sizing</a></li>
+                                        <li><a href="#position" class="text-dark side-menu-link">Position</a></li>
                                         <li><a href="#layout" class="text-dark side-menu-link">Layout</a></li>
+                                        <li><a href="#responsive" class="text-dark side-menu-link">Responsive</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -285,9 +287,12 @@
                     The size is available 1 - 64, w-auto,h-auto is like the width:100%; heigth:100%; in CSS.
                 </p>
                 <div class="flex">
-                    <div class="w-64 h-64 shadow flex align-items-center justify-content-center rounded m-1"> w-64 h-64 </div>
-                    <div class="w-32 h-32 shadow rounded flex align-items-center justify-content-center m-1"> w-32 h-32</div>
-                    <div class="w-auto m-1 h-20 shadow rounded flex align-items-center justify-content-center">w-auto h-20</div>
+                    <div class="w-64 h-64 shadow flex align-items-center justify-content-center rounded m-1"> w-64 h-64
+                    </div>
+                    <div class="w-32 h-32 shadow rounded flex align-items-center justify-content-center m-1"> w-32 h-32
+                    </div>
+                    <div class="w-auto m-1 h-20 shadow rounded flex align-items-center justify-content-center">w-auto
+                        h-20</div>
                 </div>
                 <pre class="html rounded mb-5">
 
@@ -338,6 +343,39 @@
     &lt;div class="max-w-sm"&gt;&lt;div&gt; 
     &lt;div class="max-h-sm"&gt;&lt;div&gt; 
                 
+</pre>
+                <p>Extra available with "fit-cover" and "fit-contain" like object-fit in CSS</p>
+                <h2 id="position">Position</h2>
+                <p>We have some position class the class avialable is absolute, fixed, relative and sticky.</p>
+                <p>And on "fixed" and "absolute" can add top, right, bottom, and left class for set position (
+                    top-{0-100} ).</p>
+                <div class="m-auto rounded shadow p-1 max-w-sm">
+                    <div class="w-auto h-40 relative">
+                        <div class="absolute w-auto h-auto top-0 left-0 right-0 bottom-0 ">
+                            <img class="w-auto h-auto fit-cover"
+                                src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fGNhbWVyYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                alt="">
+                        </div>
+                        <img class="absolute bottom-5 left-5 w-16 h-16 circle fit-cover"
+                            src="https://images.unsplash.com/photo-1611769864329-ef8d67d6cf78?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                            alt="">
+                    </div>
+                </div>
+                <pre class="html rounded">
+
+    &lt;div class=&quot;m-auto rounded shadow p-1 max-w-sm&quot;&gt;
+        &lt;div class=&quot;w-auto h-40 relative&quot;&gt;
+            &lt;div class=&quot;absolute w-auto h-auto top-0 left-0 right-0 bottom-0 &quot;&gt;
+                &lt;img class=&quot;w-auto h-auto fit-cover&quot;
+                    src=&quot;https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fGNhbWVyYXxlbnwwfHwwfA%3D%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60&quot;
+                    alt=&quot;&quot;&gt;
+            &lt;/div&gt;
+            &lt;img class=&quot;absolute bottom-5 left-5 w-16 h-16 circle fit-cover&quot;
+                src=&quot;https://images.unsplash.com/photo-1611769864329-ef8d67d6cf78?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80&quot;
+                alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
 </pre>
                 <h2 id="layout">Row</h2>
                 <p>Use row for trigger flex style then use col as child for grid system col-{1-12} for sizing<br>
@@ -405,6 +443,52 @@
         &lt;div class="col-3"> col &lt;/div&gt;
         &lt;div class="col-3"> col &lt;/div&gt;
         &lt;div class="col-3"> col &lt;/div&gt;
+    &lt;/div&gt;
+
+</pre>
+                <h2 id="responsive">Responsive</h2>
+                <p>You can add breakpoint in front of class (Not work with Row and Components) to style it on specify
+                    viewport.</p>
+                <p>Try resize window to see difference.</p>
+                <div class="md-flex md-justify-content-center">
+                    <div
+                        class="md-m-1 mb-1 shadow overflow-hide md-p-1 max-w-sm rounded flex md-flex-column md-align-items-center md-justify-content-center">
+                        <img class="transition md-w-40 md-h-40 w-32 h-auto md-p-0 fit-cover md-circle"
+                            src="https://images.unsplash.com/photo-1602423597260-6e754437411a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                            alt="">
+                        <div class="transition md-text-center col ml-1 md-ml-0">
+                            <h3 class="font-600">Smiling</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="md-m-1 mb-1 shadow overflow-hide md-p-1 max-w-sm rounded flex md-flex-column md-align-items-center md-justify-content-center">
+                        <img class="transition md-w-40 md-h-40 w-32 h-auto md-p-0 fit-cover md-circle"
+                            src="https://images.unsplash.com/photo-1604684330644-25c4d8142c01?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=625&q=80"
+                            alt="">
+                        <div class="transition md-text-center col ml-1 md-ml-0">
+                            <h3 class="font-600">Every One Is Beautiful</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <pre class="html rounded mb-5">
+
+    &lt;div class=&quot;md-flex md-justify-content-center&quot;&gt;
+        &lt;div class=&quot;md-m-1 mb-1 shadow overflow-hide md-p-1 max-w-sm rounded flex md-flex-column md-align-items-center md-justify-content-center&quot;&gt;
+            &lt;img class=&quot;md-w-40 md-h-40 w-32 h-auto md-p-0 fit-cover md-circle&quot; src=&quot;https://images.unsplash.com/photo-1602423597260-6e754437411a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80&quot; alt=&quot;&quot;&gt;
+            &lt;div class=&quot;md-text-center col ml-1 md-ml-0&quot;&gt;
+                &lt;h3 class=&quot;font-600&quot;&gt;Smiling&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;md-m-1 mb-1 shadow overflow-hide md-p-1 max-w-sm rounded flex md-flex-column md-align-items-center md-justify-content-center&quot;&gt;
+            &lt;img class=&quot;md-w-40 md-h-40 w-32 h-auto md-p-0 fit-cover md-circle&quot; src=&quot;https://images.unsplash.com/photo-1604684330644-25c4d8142c01?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=625&amp;q=80&quot; alt=&quot;&quot;&gt;
+            &lt;div class=&quot;md-text-center col ml-1 md-ml-0&quot;&gt;
+                &lt;h3 class=&quot;font-600&quot;&gt;Every One Is Beautiful&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 
 </pre>
