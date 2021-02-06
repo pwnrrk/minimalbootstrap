@@ -22,6 +22,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark.min.css">
     <style>
         .bg-test {
@@ -43,12 +45,11 @@
             width: 100%;
             overflow: auto;
             padding-top: 1rem;
-            font-family: monospace;
-            background-color: var(--dark);
+            font-family: 'Source Code Pro', monospace;
         }
 
         pre * {
-            font-family: monospace;
+            font-family: 'Source Code Pro', monospace;
         }
 
         code {
@@ -169,7 +170,8 @@
                                     </svg> Basic</a>
                                 <div class="collapse" id="basic">
                                     <ul style="list-style: none;" class="pl-1">
-                                        <li><a href="#installation" class="text-dark side-menu-link">Installation</a></li>
+                                        <li><a href="#installation" class="text-dark side-menu-link">Installation</a>
+                                        </li>
                                         <li><a href="#text" class="text-dark side-menu-link">Text</a></li>
                                         <li><a href="#sizing" class="text-dark side-menu-link">Sizing</a></li>
                                         <li><a href="#position" class="text-dark side-menu-link">Position</a></li>
@@ -267,6 +269,7 @@
 </pre>
                 <p>If you use framework such as Meteor you can use</p>
                 <pre class="js rounded">
+                    
     // For initial.
     import "@r.phuwanat/minbootstap/js/minBootstrap";
     // We have extract some utility function.
